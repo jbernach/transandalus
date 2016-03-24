@@ -1,0 +1,15 @@
+{
+    "main": {
+        "title": "TransAndalus",
+        "subtitle": "",
+        "logged": {
+            "message": "Está conectado como \"{{username}}\"."
+        },
+        "question": "Si tienes alguna duda, consulta a <a href='mailto:jbernach@gmail.com'>Bernaco</a>.",
+        "link": {
+            "homepage": "Página de inicio de TransAndalus",
+            "bugtracker": "Seguimiento de errores",
+            "contact": "contacto @transandalus en Twitter"
+        }
+      }
+}
