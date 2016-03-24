@@ -1,0 +1,28 @@
+<div>
+    <h2 translate="transandalus.article.home.title">Articles</h2>
+    <jh-alert></jh-alert>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="title"><span translate="transandalus.article.title">Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="text"><span translate="transandalus.article.text">Text</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="category.name"><span translate="transandalus.article.category">category</span> <span class="glyphicon glyphicon-sort"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="article in articles track by article.id">
+                    <td><a ui-sref="article.detail({id:article.id})">{{article.id}}</a></td>
+                    <td><a ui-sref="article.detail({id:article.id})">{{article.title}}</a></td>
+                    <td>{{article.text}}</td>
+                    <td>
+                        <a ui-sref="category.detail({id:article.category.id})">{{article.category.name}}</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <uib-pager total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pager>
+</div>

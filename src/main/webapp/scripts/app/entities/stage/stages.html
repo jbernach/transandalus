@@ -1,0 +1,36 @@
+<div>
+    <h2 translate="transandalus.stage.home.title">Stages</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="form-group pull-right">
+                    <input type="text" ng-model="filter" class="form-control" placeholder="{{ 'transandalus.stage.home.search' | translate }}" ng-keydown="$event.which === 13 && loadAll()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="province.code"><span translate="transandalus.stage.province">province</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span translate="transandalus.stage.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="stage in stages track by stage.id">
+                    <td><a ui-sref="stage.detail({id:stage.id})">{{stage.id}}</a></td>
+                    <td>
+                        <a ui-sref="province.detail({id:stage.province.id})">{{stage.province.name}}</a>
+                    </td>
+                    <td><a ui-sref="stage.detail({id:stage.id})">{{stage.name}}</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <uib-pager total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pager>
+</div>
