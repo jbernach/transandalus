@@ -3,13 +3,20 @@
 angular.module('transandalus')
     .service('ParseLinks', function () {
         this.parse = function (header) {
+            var links = {};
+            
+            if (!angular.isObject()) {
+                    // CORS OPTIONS responses
+                    return links;
+                }
+
             if (header.length == 0) {
                 throw new Error("input must not be of zero length");
             }
 
             // Split parts by comma
             var parts = header.split(',');
-            var links = {};
+            
             // Parse each part into a named link
             angular.forEach(parts, function (p) {
                 var section = p.split(';');

@@ -59,11 +59,9 @@ module.exports = function (grunt) {
             },
             options: {
                 watchTask: true,
-                proxy: {
-                    target: "localhost:8080",
-                    proxyOptions: {
-                        xfwd: true
-                    }
+                server: {
+                    baseDir: "src/main/webapp",
+                    index: "index.html"
                 }
             }
         },

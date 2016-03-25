@@ -7,7 +7,7 @@ angular.module('transandalus')
                 parent: 'entity',
                 url: '/menus',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [],
                     pageTitle: 'transandalus.menu.home.title'
                 },
                 views: {
@@ -28,7 +28,7 @@ angular.module('transandalus')
                 parent: 'entity',
                 url: '/menu/{id}',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [],
                     pageTitle: 'transandalus.menu.detail.title'
                 },
                 views: {
