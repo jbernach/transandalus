@@ -129,3 +129,4 @@ Desktop.ini
 /.apt_generated/
 .factorypath
 env_variables.txt
+dist/

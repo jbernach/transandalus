@@ -68,6 +68,7 @@ angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
                 $state.go($rootScope.previousStateName, $rootScope.previousStateParams);
             }
         };
+
     })
     .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $translateProvider, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider, AlertServiceProvider) {
         // uncomment below to make alerts look like toast
@@ -104,6 +105,8 @@ angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
         $httpProvider.interceptors.push('errorHandlerInterceptor');
         $httpProvider.interceptors.push('authExpiredInterceptor');
         $httpProvider.interceptors.push('notificationInterceptor');
+        $httpProvider.interceptors.push('crossDomainXsrfHeaderInterceptor');
+
         // jhipster-needle-angularjs-add-interceptor JHipster will add new application interceptor here
         
         // Initialize angular-translate

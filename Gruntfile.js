@@ -274,7 +274,7 @@ module.exports = function (grunt) {
                 constants: {
                     ENV: 'dev',
                     VERSION: require('./bower.json').version || '0.0.0',
-                    API_URL: 'http://nueva.transandalus.org/admin/api'
+                    API_URL: 'http://127.0.0.1:7001/api'
                 }
             },
             prod: {

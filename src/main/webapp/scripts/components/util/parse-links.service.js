@@ -6,9 +6,9 @@ angular.module('transandalus')
             var links = {};
             
             if (!angular.isObject()) {
-                    // CORS OPTIONS responses
-                    return links;
-                }
+                // CORS OPTIONS responses
+                return links;
+            }
 
             if (header.length == 0) {
                 throw new Error("input must not be of zero length");
