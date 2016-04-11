@@ -1,12 +1,14 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('RegisterController', function ($scope, $translate, $timeout, Auth) {
+    .controller('RegisterController', function ($scope, $translate, $timeout, Auth, vcRecaptchaService) {
         $scope.success = null;
         $scope.error = null;
         $scope.doNotMatch = null;
         $scope.errorUserExists = null;
-        $scope.registerAccount = {};
+        $scope.registerAccount = {recaptcha:{}};
+        $scope.recaptchaInvalid = null;
+
         $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});
 
         $scope.register = function () {
@@ -18,6 +20,7 @@ angular.module('transandalus')
                 $scope.error = null;
                 $scope.errorUserExists = null;
                 $scope.errorEmailExists = null;
+                $scope.recaptchaInvalid = null;
 
                 Auth.createAccount($scope.registerAccount).then(function () {
                     $scope.success = 'OK';
@@ -27,10 +30,16 @@ angular.module('transandalus')
                         $scope.errorUserExists = 'ERROR';
                     } else if (response.status === 400 && response.data === 'e-mail address already in use') {
                         $scope.errorEmailExists = 'ERROR';
-                    } else {
+                    } else if (response.status === 400 && response.data === 'invalid recaptcha') {
+                        $scope.recaptchaInvalid = 'ERROR';
+                    }else {
                         $scope.error = 'ERROR';
                     }
                 });
             }
+        };
+
+        $scope.setWidgetId = function (widgetId) {
+            $scope.registerAccount.recaptcha.widgetId = widgetId;
         };
     });

@@ -3,7 +3,7 @@
 angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalprecht.translate', 
     'ngResource', 'ngCookies', 'ngAria', 'ngCacheBuster',
     // jhipster-needle-angularjs-add-module JHipster will add new module here
-    'ui.bootstrap', 'ui.router',  'infinite-scroll', 'angular-loading-bar','hc.marked','uiGmapgoogle-maps'])
+    'ui.bootstrap', 'ui.router',  'infinite-scroll', 'angular-loading-bar','hc.marked','uiGmapgoogle-maps','vcRecaptcha'])
 
     .run(function ($rootScope, $location, $window, $http, $state, $translate, Language, Auth, Principal, ENV, VERSION) {
         // update the window title using params in the following
