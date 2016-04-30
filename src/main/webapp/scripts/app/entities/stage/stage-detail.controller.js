@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('StageDetailController', function ($scope, $rootScope, $stateParams, DataUtils, entity, Stage, Province, $location) {
+    .controller('StageDetailController', function ($scope, $rootScope, $stateParams, DataUtils, entity, Stage, Province, $location, API_URL) {
         $scope.stage = entity;
         $scope.load = function (id) {
             Stage.get({id: id}, function(result) {
@@ -28,7 +28,7 @@ angular.module('transandalus')
         if($scope.stage.$promise){
             $scope.stage.$promise.then(function(el){
                 if(el.track){
-                    var url = 'http://' + window.location.hostname + ':' + window.location.port + window.location.pathname + 'api/tracks/'+el.track.id;
+                    var url = API_URL + '/tracks/'+el.track.id;
                     $scope.map.kmlLayerOptions = {'url':url};
                 }
             });

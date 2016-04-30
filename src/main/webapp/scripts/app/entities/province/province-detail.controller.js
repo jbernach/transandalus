@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('ProvinceDetailController', function ($scope, $rootScope, $stateParams, DataUtils, entity, Province, $location) {
+    .controller('ProvinceDetailController', function ($scope, $rootScope, $stateParams, DataUtils, entity, Province, $location, API_URL) {
         $scope.province = entity;
 
         $scope.load = function (id) {
@@ -30,7 +30,7 @@ angular.module('transandalus')
         if($scope.province.$promise){
             $scope.province.$promise.then(function(el){
                 if(el.track){
-                    var url = 'http://' + window.location.hostname + ':' + window.location.port + window.location.pathname + 'api/tracks/'+el.track.id;
+                    var url = API_URL + '/tracks/'+el.track.id;
                     $scope.map.kmlLayerOptions = {'url':url};
                 }
           });
