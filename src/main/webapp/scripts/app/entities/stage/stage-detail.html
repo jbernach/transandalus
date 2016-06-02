@@ -20,6 +20,30 @@
             </tr>
             <tr>
                 <td>
+                    <span translate="transandalus.stage.stageType">Type</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'transandalus.StageType.' + stage.stageType}}">{{stage.stageType}}</span>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <span translate="transandalus.stage.province">province</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="province.detail({id:stage.province.id})">{{stage.province.name}}</a>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <span translate="transandalus.stage.startPlace">Start place</span>
+                </td>
+               <td>
+                    <span class="form-control-static">{{stage.startPlace}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <span translate="transandalus.stage.description">Description</span>
                 </td>
                 <td>
@@ -82,15 +106,7 @@
                     <span class="form-control-static">{{stage.galleryURL}}</span>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.province">province</span>
-                </td>
-                <td>
-                    <a class="form-control-static" ui-sref="province.detail({id:stage.province.id})">{{stage.province.name}}</a>
-                </td>
-            </tr>
-            <tr>
+            <tr ng-if="stage.nextStage.name">
                 <td>
                     <span translate="transandalus.stage.nextStage">nextStage</span>
                 </td>
@@ -98,7 +114,7 @@
                     <a class="form-control-static" ui-sref="stage.detail({id:stage.nextStage.id})">{{stage.nextStage.name}}</a>
                 </td>
             </tr>
-            <tr>
+           <tr ng-if="stage.nextAltStage.name">
                 <td>
                     <span translate="transandalus.stage.nextAltStage">nextAltStage</span>
                 </td>
@@ -106,7 +122,7 @@
                     <a class="form-control-static" ui-sref="stage.detail({id:stage.nextAltStage.id})">{{stage.nextAltStage.name}}</a>
                 </td>
             </tr>
-            <tr>
+            <tr ng-if="stage.prevStage.name">
                 <td>
                     <span translate="transandalus.stage.prevStage">prevStage</span>
                 </td>
@@ -114,7 +130,7 @@
                     <a class="form-control-static" ui-sref="stage.detail({id:stage.prevStage.id})">{{stage.prevStage.name}}</a>
                 </td>
             </tr>
-            <tr>
+            <tr ng-if="stage.prevAltStage.name">
                 <td>
                     <span translate="transandalus.stage.prevAltStage">prevAltStage</span>
                 </td>

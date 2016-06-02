@@ -20,6 +20,7 @@ angular.module('transandalus')
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                         $translatePartialLoader.addPart('stage');
                         $translatePartialLoader.addPart('difficulty');
+                        $translatePartialLoader.addPart('stageType');
                         $translatePartialLoader.addPart('global');
                         return $translate.refresh();
                     }]
@@ -42,7 +43,7 @@ angular.module('transandalus')
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                         $translatePartialLoader.addPart('stage');
                         $translatePartialLoader.addPart('difficulty');
-                        $translatePartialLoader.addPart('difficulty');
+                        $translatePartialLoader.addPart('stageType');
                         return $translate.refresh();
                     }],
                     entity: ['$stateParams', 'Stage', function($stateParams, Stage) {
