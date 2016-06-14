@@ -1,24 +1,15 @@
-<div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1 translate="main.title">TransAndalus</h1>
-            <p class="lead" translate="main.subtitle">Andalucía en MTB</p>
+<section ng-cloak>
+    <h1 translate="main.title" class="text-center">Bienvenidos a TransAndalus</h1>
+    <p class="lead text-center" translate="main.subtitle">Una ruta en bicicleta de montaña de 2000 Km por Andalucía</p>
 
-            <div ng-switch="isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true" translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
-                    You are logged in as user "{{account.login}}".
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register">
-                    You don't have an account yet? <a class="alert-link" href="#/register">Register a new account</a>
-                </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 text-center" ng-repeat="province in provinces track by province.id">
+                <a ui-sref="province.detail({id:province.id})">{{province.name}}</a>
             </div>
-
-            <p><a href="/admin">Acceder a la web de administración</a></p>
-            
         </div>
     </div>
-</div>
+</section>
+<section>
+    <h1 class="text-center">Cicloturismo en un click</h1>
+</section>

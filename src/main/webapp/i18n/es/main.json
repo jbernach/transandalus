@@ -1,7 +1,7 @@
 {
     "main": {
-        "title": "TransAndalus",
-        "subtitle": "",
+        "title": "Bienvenidos a TransAndalus",
+        "subtitle": "Una ruta de bicicleta de montaña de 2000 Km por Andalucía",
         "logged": {
             "message": "Está conectado como \"{{username}}\"."
         },
