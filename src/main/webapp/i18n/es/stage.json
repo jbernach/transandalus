@@ -1,35 +1,20 @@
 {
     "transandalus": {
         "stage" : {
-            "home": {
-                "title": "Etapas",
-                "createLabel": "Crear nueva Etapa",
-                "createOrEditLabel": "Crear o editar Etapa",
-                "search": "Buscar Etapa"
-            },
-            "created": "Una nueva Etapa ha sido creada con el identificador {{ param }}",
-            "updated": "Una Etapa ha sido actualizada con el identificador {{ param }}",
-            "deleted": "Una Etapa ha sido eliminada con el identificador {{ param }}",
-            "delete": {
-                "question": "¿Seguro que quiere eliminar la Etapa {{ id }}?"
-            },
-            "detail": {
-                "title": "Etapa"
-            },
             "name": "Nombre",
             "description": "Descripción",
-            "distanceTotal": "Distancia total (km)",
-            "distanceRoad": "Distancia por carretera (km)",
-            "estimatedTime": "Tiempo estimado (min)",
-            "elevation": "Desnivel acumulado (m)",
+            "distanceTotal": "Distancia total",
+            "distanceRoad": "Distancia por carretera",
+            "estimatedTime": "Tiempo estimado",
+            "elevation": "Desnivel acumulado",
             "difficultyPhys": "Dificultad física",
             "difficultyTech": "Dificultad técnica",
-            "galleryURL": "URL galería de photos",
+            "galleryURL": "Galería de fotos",
             "province": "Provincia",
-            "nextStage": "Siguiente etapa",
-            "nextAltStage": "Siguiente etapa (alternativa)",
+            "nextStage": "Etapa siguiente",
+            "nextAltStage": "Alternativa",
             "prevStage": "Etapa anterior",
-            "prevAltStage": "Etapa anterior (alternativa)",
+            "prevAltStage": "Alternativa",
             "image": "Imagen",
             "imageURL": "URL Imagen",
             "track": "Track (kml)",

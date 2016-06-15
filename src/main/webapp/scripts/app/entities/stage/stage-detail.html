@@ -1,172 +1,76 @@
+<article style="background-image:{{stage.imageUrl}}">
+    <header>
+        <a class="form-control-static" ui-sref="province.detail({id:stage.province.id})">{{stage.province.name}}</a>
+        <h1>{{stage.name}}</h1>
+    </header>
+    <section>
+        <span class="form-control-static" marked="stage.description"></span>
+    </section>
+    <section class="well">
+        <div ng-if="stage.track.contentType">
+            <div class="panel">
+                <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
+                    <ui-gmap-layer type="KmlLayer" options="map.kmlLayerOptions"></ui-gmap-layer>
+                </ui-gmap-google-map>
+            </div>
+        
+            <p>
+                <a href="{{map.kmlLayerOptions.url}}" download="{{stage.track.name}}" target="_blank" translate="transandalus.stage.downloadTrack" class="btn btn-default">Download track</a>
+                <a ng-if="stage.galleryURL || true" translate="transandalus.stage.galleryURL" src="{{stage.galleryURL}}" class="pull-right">GalleryURL</a>
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="row">
+            <div class="col-sm-4 col-lg-2" ng-if="stage.distanceTotal">
+                <div class="panel panel-default">
+                    <div class="panel-heading" translate="transandalus.stage.distanceTotal">DistanceTotal</div>
+                    <div class="panel-body">{{stage.distanceTotal}} Km</div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-2" ng-if="stage.distanceRoad">
+                <div class="panel panel-default">
+                    <div class="panel-heading" translate="transandalus.stage.distanceRoad">DistanceRoad</div>
+                    <div class="panel-body">{{stage.distanceRoad}} Km</div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-2" ng-if="stage.estimatedTime">
+                <div class="panel panel-default">
+                    <div class="panel-heading" translate="transandalus.stage.estimatedTime">EstimatedTime</div>
+                    <div class="panel-body">{{stage.estimatedTime}} min</div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-2" ng-if="stage.elevation">
+                <div class="panel panel-default">
+                    <div class="panel-heading" translate="transandalus.stage.elevation">Elevation</div>
+                    <div class="panel-body">{{stage.elevation}} m</div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-2" ng-if="stage.difficultyPhys">
+                <div class="panel panel-default">
+                    <div class="panel-heading" translate="transandalus.stage.difficultyPhys">DifficultyPhys</div>
+                    <div class="panel-body" translate="{{'transandalus.Difficulty.' + stage.difficultyPhys}}">{{stage.difficultyPhys}}</div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-2" ng-if="stage.difficultyTech">
+                <div class="panel panel-default">
+                    <div class="panel-heading" translate="transandalus.stage.difficultyTech">DifficultyTech</div>
+                    <div class="panel-body" translate="{{'transandalus.Difficulty.' + stage.difficultyTech}}">{{stage.difficultyTech}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div>
-    <h2><span translate="transandalus.stage.detail.title">Stage</span> {{stage.id}}</h2>
-    <div class="table-responsive">
-        <table class="table table-striped table-condensed">
-            <thead>
-            <tr>
-                <th translate="entity.detail.field">Field</th>
-                <th translate="entity.detail.value">Value</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.name">Name</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{stage.name}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.stageType">Type</span>
-                </td>
-                <td>
-                    <span class="form-control-static" translate="{{'transandalus.StageType.' + stage.stageType}}">{{stage.stageType}}</span>
-                </td>
-            </tr>
-             <tr>
-                <td>
-                    <span translate="transandalus.stage.province">province</span>
-                </td>
-                <td>
-                    <a class="form-control-static" ui-sref="province.detail({id:stage.province.id})">{{stage.province.name}}</a>
-                </td>
-            </tr>
-             <tr>
-                <td>
-                    <span translate="transandalus.stage.startPlace">Start place</span>
-                </td>
-               <td>
-                    <span class="form-control-static">{{stage.startPlace}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.description">Description</span>
-                </td>
-                <td>
-                    <span class="form-control-static" marked="stage.description"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.distanceTotal">DistanceTotal</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{stage.distanceTotal}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.distanceRoad" class="text-nowrap">DistanceRoad (km)</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{stage.distanceRoad}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.estimatedTime">EstimatedTime</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{stage.estimatedTime}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.elevation">Elevation</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{stage.elevation}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.difficultyPhys">DifficultyPhys</span>
-                </td>
-                <td>
-                    <span class="form-control-static" translate="{{'transandalus.Difficulty.' + stage.difficultyPhys}}">{{stage.difficultyPhys}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.difficultyTech">DifficultyTech</span>
-                </td>
-                <td>
-                    <span class="form-control-static" translate="{{'transandalus.Difficulty.' + stage.difficultyTech}}">{{stage.difficultyTech}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.galleryURL">GalleryURL</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{stage.galleryURL}}</span>
-                </td>
-            </tr>
-            <tr ng-if="stage.nextStage.name">
-                <td>
-                    <span translate="transandalus.stage.nextStage">nextStage</span>
-                </td>
-                <td>
-                    <a class="form-control-static" ui-sref="stage.detail({id:stage.nextStage.id})">{{stage.nextStage.name}}</a>
-                </td>
-            </tr>
-           <tr ng-if="stage.nextAltStage.name">
-                <td>
-                    <span translate="transandalus.stage.nextAltStage">nextAltStage</span>
-                </td>
-                <td>
-                    <a class="form-control-static" ui-sref="stage.detail({id:stage.nextAltStage.id})">{{stage.nextAltStage.name}}</a>
-                </td>
-            </tr>
-            <tr ng-if="stage.prevStage.name">
-                <td>
-                    <span translate="transandalus.stage.prevStage">prevStage</span>
-                </td>
-                <td>
-                    <a class="form-control-static" ui-sref="stage.detail({id:stage.prevStage.id})">{{stage.prevStage.name}}</a>
-                </td>
-            </tr>
-            <tr ng-if="stage.prevAltStage.name">
-                <td>
-                    <span translate="transandalus.stage.prevAltStage">prevAltStage</span>
-                </td>
-                <td>
-                    <a class="form-control-static" ui-sref="stage.detail({id:stage.prevAltStage.id})">{{stage.prevAltStage.name}}</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.image">Image</span>
-                </td>
-                <td>
-                    <img data-ng-src="{{stage.imageUrl}}" style="max-width: 100%;" ng-if="stage.imageUrl"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span translate="transandalus.stage.track">Track</span>
-                </td>
-                <td>
-                    <div ng-if="stage.track.content">
-                        <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
-                            <ui-gmap-layer type="KmlLayer" options="map.kmlLayerOptions"></ui-gmap-layer>
-                        </ui-gmap-google-map>
-                        <br>
-                        <div><a href="{{map.kmlLayerOptions.url}}" download="{{stage.track.name}}" target="_blank" translate="transandalus.stage.downloadTrack">Download track</a></div>
-                        <div>{{stage.track.contentType}}  {{byteSize(stage.track.content)}}</div>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <button type="submit"
-            onclick="window.history.back()"
-            class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-    </button>
-</div>
+    <nav>
+        <ul class="pager">
+            <li class="previous" ng-if="stage.prevStage.id"><a ui-sref="stage.detail({id:stage.prevStage.id})" title="{{stage.prevStage.name}}"><span aria-hidden="true">&larr;</span> <span translate="transandalus.stage.prevStage">Previous stage</span></a></li>
+            <li class="next" ng-if="stage.nextStage.id"><a ui-sref="stage.detail({id:stage.nextStage.id})" title="{{stage.nextStage.name}}"><span translate="transandalus.stage.nextStage">Next stage</span> <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>
+    <nav ng-if="stage.prevAltStage.id || stage.nextAltStage.id">
+        <ul class="pager">
+            <li class="previous" ng-if="stage.prevAltStage.id"><a ui-sref="stage.detail({id:stage.prevAltStage.id})" title="{{stage.prevAltStage.name}}"><span aria-hidden="true">&larr;</span> <span translate="transandalus.stage.prevAltStage">Alternative</span></a></li>
+            <li class="next" ng-if="stage.nextAltStage.id"><a ui-sref="stage.detail({id:stage.nextAltStage.id})" title="{{stage.nextAltStage.name}}"><span translate="transandalus.stage.nextAltStage">Alternative</span> <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>
+</article>
