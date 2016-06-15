@@ -5,26 +5,7 @@ angular.module('transandalus')
         $stateProvider
             .state('stage', {
                 parent: 'entity',
-                url: '/stages',
-                data: {
-                    authorities: [],
-                    pageTitle: 'transandalus.stage.home.title'
-                },
-                views: {
-                    'content@': {
-                        templateUrl: 'scripts/app/entities/stage/stages.html',
-                        controller: 'StageController'
-                    }
-                },
-                resolve: {
-                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                        $translatePartialLoader.addPart('stage');
-                        $translatePartialLoader.addPart('difficulty');
-                        $translatePartialLoader.addPart('stageType');
-                        $translatePartialLoader.addPart('global');
-                        return $translate.refresh();
-                    }]
-                }
+                abstract: true
             })
             .state('stage.detail', {
                 parent: 'entity',
