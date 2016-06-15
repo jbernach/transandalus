@@ -1,20 +1,16 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('ProvinceDetailController', function ($scope, $rootScope, $stateParams, DataUtils, entity, Province, $location, API_URL) {
+    .controller('ProvinceDetailController', function ($scope, entity, Province, Stage, API_URL) {
         $scope.province = entity;
 
-        $scope.load = function (id) {
-            Province.get({id: id}, function(result) {
-                $scope.province = result;
-            });
-        };
-        var unsubscribe = $rootScope.$on('transandalus:provinceUpdate', function(event, result) {
-            $scope.province = result;
-        });
-        $scope.$on('$destroy', unsubscribe);
+        $scope.stages = [];
 
-        $scope.byteSize = DataUtils.byteSize;
+        $scope.loadStages = function(){
+            Stage.query({page: 0, size: 100, sort: ['id'], province: $scope.province.id}, function(result, headers) {
+                $scope.stages = result;
+            });
+        }
 
         $scope.map = {
             //Cordoba
@@ -26,14 +22,15 @@ angular.module('transandalus')
             options: {scrollwheel:false}
         };
 
+      
+        $scope.province.$promise.then(function(el){
+            if(el.track){
+                var url = API_URL + '/tracks/'+el.track.id;
+                $scope.map.kmlLayerOptions = {'url':url};
+            }
 
-        if($scope.province.$promise){
-            $scope.province.$promise.then(function(el){
-                if(el.track){
-                    var url = API_URL + '/tracks/'+el.track.id;
-                    $scope.map.kmlLayerOptions = {'url':url};
-                }
-          });
-        }
+            $scope.loadStages();
+        });
+       
          
     });
