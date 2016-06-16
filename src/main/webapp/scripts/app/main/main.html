@@ -2,11 +2,9 @@
     <h1 translate="main.title" class="text-center">Bienvenidos a TransAndalus</h1>
     <p class="lead text-center" translate="main.subtitle">Una ruta en bicicleta de montaña de 2000 Km por Andalucía</p>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3 text-center" ng-repeat="province in provinces track by province.id">
-                <a ui-sref="province.detail({id:province.id})">{{province.name}}</a>
-            </div>
+    <div class="row">
+        <div class="col-sm-3 text-center" ng-repeat="province in provinces track by province.id">
+            <a class="btn btn-default well" ui-sref="province.detail({id:province.id})">{{province.name}}</a>
         </div>
     </div>
 </section>

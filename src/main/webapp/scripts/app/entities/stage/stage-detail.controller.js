@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('StageDetailController', function ($scope, $rootScope, $stateParams, DataUtils, entity, Stage, Province, $location, API_URL) {
+    .controller('StageDetailController', function ($scope, $rootScope, $stateParams, DataUtils, entity, Stage, API_URL) {
         $scope.stage = entity;
         $scope.load = function (id) {
             Stage.get({id: id}, function(result) {
