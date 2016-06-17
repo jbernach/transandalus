@@ -1,5 +1,8 @@
 <li ng-repeat="menuItem in menuItems track by menuItem.id" ui-sref-active="active">
-    <a href="{{menuItem.url}}" data-toggle="collapse" data-target=".navbar-collapse.in">
+    <a ng-if="menuItem.url.startsWith('state:')" ui-sref="{{menuItem.url.substring('state:'.length)}}" href="#" data-toggle="collapse" data-target=".navbar-collapse.in">
+        <span>{{menuItem.text}}</span>
+    </a>
+    <a ng-if="!menuItem.url.startsWith('state:')" href="{{menuItem.url}}" data-toggle="collapse" data-target=".navbar-collapse.in">
         <span>{{menuItem.text}}</span>
     </a>
 </li>
