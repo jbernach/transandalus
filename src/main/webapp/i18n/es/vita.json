@@ -1,7 +1,8 @@
 {
     "transandalus": {
         "vita" : {
-            "title": "Visor interactivo"
+            "title": "Visor interactivo",
+            "search": "Buscar"
         }
     }
 }
