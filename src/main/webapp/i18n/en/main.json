@@ -1,6 +1,6 @@
 {
     "main": {
-        "title": "Wellcome to TransAndalus",
+        "title": "Welcome to TransAndalus",
         "subtitle": "A 2000 Km MTB route through Andalusia",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
