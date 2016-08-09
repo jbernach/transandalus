@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('VitaController', function ($scope, Principal, Stage, API_URL) {
+    .controller('VitaController', function ($scope, Principal, API_URL) {
        Principal.identity().then(function(account) {
             $scope.account = account;
             $scope.isAuthenticated = Principal.isAuthenticated;
@@ -13,20 +13,19 @@ angular.module('transandalus')
               longitude: -4.778564
             },
             zoom:7,
-            options: {scrollwheel:false}
+            options: {
+                scrollwheel:false,
+                mapTypeControlOptions:{
+                    position: 3
+                }
+            }
         };
 
-        $scope.map.kmlLayerOptions = {'url':''};
-
-        $scope.loadAllStages = function() {
-            Stage.query({page: 0, size: 18, sort: ['id']}, function(result, headers) {
-               for (var i = 0; i < result.length; i++) {
-                   result[i].kmlLayerOptions = {url: API_URL + '/tracks/'+result[i].trackId};
-               }
-             
-                $scope.stages = result;
-            });
-        };
        
-        $scope.loadAllStages();
+       //            result[i].kmlLayerOptions = {url: API_URL + '/tracks/'+result[i].trackId};
+       
+        $scope.$on('$viewContentLoaded', function () {
+            var mapHeight = window.screen.availHeight - 240; // or any other calculated value
+            $("#vita-google-map .angular-google-map-container").height(mapHeight);
+        });
     });

@@ -1,72 +1,9 @@
 <section ng-cloak>
-    <div style="max-width:300px">
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <ul class="nav navbar-left">
-                    <li>
-                        <button type="button" class="btn btn-default navbar-btn" aria-label="Show menu" title="Show menu" data-toggle="collapse" data-target="#vita-main-menu">
-                            <span class="sr-only">Show menu</span>
-                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                        </button>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                </form>
-            </div>
-        </nav>
-    </div>
-    <div class="collapse" id="vita-main-menu" style="max-width:300px">
-        <div class="panel-group" id="vita-menu-accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="vita-places-heading">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#vita-menu-accordion" data-target="#vita-places-provinces" aria-expanded="true" aria-controls="vita-places-provinces">
-                          Places
-                        </a>
-                    </h4>
-                </div>
-                <div id="vita-places-provinces" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="vita-places-heading">
-                    <div class="panel-body">
-                        List of provinces
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="vita-services-heading">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#vita-menu-accordion" data-target="#vita-services-categories" aria-expanded="true" aria-controls="vita-services-categories">
-                          Services
-                        </a>
-                    </h4>
-                </div>
-                <div id="vita-services-categories" class="panel-collapse collapse" role="tabpanel" aria-labelledby="vita-services-heading">
-                    <div class="panel-body">
-                        List of categories
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="vita-weather-heading">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#vita-menu-accordion" data-target="#vita-weather-menu" aria-expanded="true" aria-controls="vita-weather-menu">
-                          Weather
-                        </a>
-                    </h4>
-                </div>
-                <div id="vita-weather-menu" class="panel-collapse collapse" role="tabpanel" aria-labelledby="vita-weather-heading">
-                    <div class="panel-body">
-                        List of Weather info
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="vita_map_container" style="position:absolute;top:0;left:0;z-index:-1;width:100%;height:100%">
-        <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
+    <div id="vita_map_container">
+        <ui-gmap-google-map id="vita-google-map" center="map.center" zoom="map.zoom" draggable="true" options="map.options">
             <ui-gmap-layer ng-repeat="stage in stages track by stage.id" type="KmlLayer" options="stage.kmlLayerOptions"></ui-gmap-layer>
+            <ui-gmap-map-control template="scripts/app/vita/vita-map-control.html" position="top-left"></ui-gmap-map-control>
         </ui-gmap-google-map>
     </div>
+
 </section>
