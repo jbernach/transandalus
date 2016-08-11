@@ -21,11 +21,51 @@ angular.module('transandalus')
             }
         };
 
-       
-       //            result[i].kmlLayerOptions = {url: API_URL + '/tracks/'+result[i].trackId};
-       
+        $scope.showMarkers = true;
+        $scope.showServices = false;
+        $scope.showAlternatives = false;
+        $scope.showLinks = false;
+
+        $scope.updateLayers = function(){
+            $scope.kmlLayers = {
+                track: {
+                    url: API_URL + '/layer/track?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks
+                },
+                markers: {
+                    url: API_URL + '/layer/marcadores?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks
+                },
+                services: {
+                    url: API_URL + '/layer/servicios?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks
+                }
+            };
+        }
+        
+        $scope.updateLayers();
+
+        // Listen to changes in vita-map-control.controller on these variables
+        $scope.$on('showMarkers:changed', function(event, val) {
+           $scope.showMarkers = val;
+           $scope.updateLayers();
+        });
+
+        $scope.$on('showServices:changed', function(event, val) {
+           $scope.showServices = val;
+           $scope.updateLayers();
+        });
+
+        $scope.$on('showAlternatives:changed', function(event, val) {
+           $scope.showAlternatives = val;
+           $scope.updateLayers();
+        });
+
+        $scope.$on('showLinks:changed', function(event, val) {
+           $scope.showLinks = val;
+           $scope.updateLayers();
+        });
+
+        // Dinamically set map vertical size
         $scope.$on('$viewContentLoaded', function () {
-            var mapHeight = window.screen.availHeight - 240; // or any other calculated value
+            var mapHeight = window.screen.availHeight - 240;
             $("#vita-google-map .angular-google-map-container").height(mapHeight);
         });
     });

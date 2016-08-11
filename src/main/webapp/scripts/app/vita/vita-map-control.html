@@ -12,56 +12,26 @@
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Search" style="width:90%">
                     </div>
                 </form>
             </div>
         </nav>
     </div>
     <div class="collapse" id="vita-main-menu">
-        <div class="panel-group" id="vita-menu-accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="vita-places-heading">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#vita-menu-accordion" data-target="#vita-places-provinces" aria-expanded="true" aria-controls="vita-places-provinces">
-                          Places
-                        </a>
-                    </h4>
-                </div>
-                <div id="vita-places-provinces" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="vita-places-heading">
-                    <div class="panel-body">
-                        List of provinces
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="vita-services-heading">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#vita-menu-accordion" data-target="#vita-services-categories" aria-expanded="true" aria-controls="vita-services-categories">
-                          Services
-                        </a>
-                    </h4>
-                </div>
-                <div id="vita-services-categories" class="panel-collapse collapse" role="tabpanel" aria-labelledby="vita-services-heading">
-                    <div class="panel-body">
-                        List of categories
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="vita-weather-heading">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#vita-menu-accordion" data-target="#vita-weather-menu" aria-expanded="true" aria-controls="vita-weather-menu">
-                          Weather
-                        </a>
-                    </h4>
-                </div>
-                <div id="vita-weather-menu" class="panel-collapse collapse" role="tabpanel" aria-labelledby="vita-weather-heading">
-                    <div class="panel-body">
-                        List of Weather info
-                    </div>
-                </div>
-            </div>
+        <div class="btn-group-vertical btn-group-lg" role="group" data-toggle="buttons" style="width:100%">
+            <label class="btn btn-default"  ng-model="showMarkers" uib-btn-checkbox>
+                 Marcadores
+            </label>
+            <label class="btn btn-default" ng-model="showServices" uib-btn-checkbox>
+                Servicios
+            </label>
+            <label class="btn btn-default" ng-model="showAlternatives" uib-btn-checkbox>
+                Alternativas
+            </label>
+            <label class="btn btn-default" ng-model="showLinks" uib-btn-checkbox>
+                Enlaces
+            </label>
         </div>
     </div>
 </div>
