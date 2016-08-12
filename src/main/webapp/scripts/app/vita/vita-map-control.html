@@ -4,15 +4,15 @@
             <div style="padding-left:15px">
                 <ul class="nav navbar-left">
                     <li>
-                        <button type="button" class="btn btn-default navbar-btn" aria-label="Show menu" title="Show menu" data-toggle="collapse" data-target="#vita-main-menu">
-                            <span class="sr-only">Show menu</span>
+                        <button type="button" class="btn btn-default navbar-btn" aria-label="{{'transandalus.vita.showMenu' | translate}}" title="{{'transandalus.vita.showMenu' | translate}}" data-toggle="collapse" data-target="#vita-main-menu">
+                            <span class="sr-only" translate="transandalus.vita.showMenu">Show menu</span>
                             <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                         </button>
                     </li>
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search" style="width:90%">
+                        <input type="text" class="form-control" placeholder="{{'transandalus.vita.search' | translate}}" style="width:90%">
                     </div>
                 </form>
             </div>
@@ -21,16 +21,16 @@
     <div class="collapse" id="vita-main-menu">
         <div class="btn-group-vertical" role="group" data-toggle="buttons" style="width:100%">
             <label class="btn btn-default"  ng-model="showMarkers" uib-btn-checkbox>
-                 Marcadores
+                 {{'transandalus.vita.showMarkers' | translate}}
             </label>
             <label class="btn btn-default" ng-model="showServices" uib-btn-checkbox>
-                Servicios
+                {{'transandalus.vita.showServices' | translate}}
             </label>
             <label class="btn btn-default" ng-model="showAlternatives" uib-btn-checkbox>
-                Alternativas
+                {{'transandalus.vita.showAlternatives' | translate}}
             </label>
             <label class="btn btn-default" ng-model="showLinks" uib-btn-checkbox>
-                Enlaces
+                {{'transandalus.vita.showLinks' | translate}}
             </label>
         </div>
     </div>

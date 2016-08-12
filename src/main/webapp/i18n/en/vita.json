@@ -2,7 +2,12 @@
     "transandalus": {
         "vita" : {
             "title": "Interactive visor",
-            "search": "Search"
+            "showMenu": "Show menu",
+            "search": "Search",
+            "showMarkers": "Show markers",
+            "showServices": "Show services",
+            "showAlternatives": "Show alternatives",
+            "showLinks": "Show link stages"
         }
     }
 }

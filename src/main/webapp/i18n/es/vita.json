@@ -2,7 +2,12 @@
     "transandalus": {
         "vita" : {
             "title": "Visor interactivo",
-            "search": "Buscar"
+            "showMenu": "Mostrar menú",
+            "search": "Buscar",
+            "showMarkers": "Mostrar marcadores",
+            "showServices": "Mostrar servicios",
+            "showAlternatives": "Mostrar alternativas",
+            "showLinks": "Mostrar enlaces"
         }
     }
 }
