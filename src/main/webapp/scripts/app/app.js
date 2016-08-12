@@ -156,6 +156,7 @@ angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
     uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyA0GaaEWidwLtS1CZ2irjrxE9lTBEqHsBE',
         v: '3', //defaults to latest 3.X anyhow
-        libraries: 'weather,geometry,visualization'
+        libraries: 'weather,geometry,visualization,places',
+        language:'es-ES'
     });
 });

@@ -1,0 +1,10 @@
+<section ng-cloak>
+    <div id="vita_map_container">
+        <ui-gmap-google-map id="vita-google-map" center="map.center" zoom="map.zoom" draggable="true" options="map.options">
+            <ui-gmap-layer type="KmlLayer" options="kmlLayers.track"></ui-gmap-layer>
+            <ui-gmap-layer type="KmlLayer" options="kmlLayers.markers" show="showMarkers"></ui-gmap-layer>
+            <ui-gmap-layer type="KmlLayer" options="kmlLayers.services" show="showServices"></ui-gmap-layer>
+            <ui-gmap-map-control template="scripts/app/vita/vita-map-control.html" controller="VitaMapControlController" position="top-left"></ui-gmap-map-control>
+        </ui-gmap-google-map>
+    </div>
+</section>
