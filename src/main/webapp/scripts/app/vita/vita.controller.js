@@ -22,7 +22,7 @@ angular.module('transandalus')
             }
         };
 
-        $scope.showMarkers = true;
+        $scope.showMarkers = false;
         $scope.showServices = false;
         $scope.showAlternatives = false;
         $scope.showLinks = false;

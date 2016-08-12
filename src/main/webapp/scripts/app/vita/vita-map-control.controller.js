@@ -2,7 +2,7 @@
 
 angular.module('transandalus')
     .controller('VitaMapControlController', function ($scope, $rootScope) {
-        $scope.showMarkers = true;
+        $scope.showMarkers = false;
         $scope.showServices = false;
         $scope.showAlternatives = false;
         $scope.showLinks = false;
