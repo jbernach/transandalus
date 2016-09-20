@@ -22,6 +22,47 @@ angular.module('transandalus')
             }
         };
 
+        $scope.searchbox = { 
+          template:'searchbox.tpl.html',
+          events:{
+            places_changed: function (searchBox) {
+            },
+            place_changed: function (searchBox) {
+                var place = searchBox.getPlace();
+
+                if (!place || place == 'undefined' || !place.geometry) {
+                    return;
+                }
+
+                // refresh the map
+                $scope.map = {
+                    center: {
+                        latitude: place.geometry.location.lat(),
+                        longitude: place.geometry.location.lng()
+                    },
+                    zoom: 10
+                };
+                
+                // refresh the marker
+                $scope.marker = {
+                    options:{ draggable:false },
+                    coords:{
+                        latitude:place.geometry.location.lat(),
+                        longitude:place.geometry.location.lng()
+                   }
+                };
+            }
+          },
+          options:{
+                autocomplete:true,
+                componentRestrictions:{
+                    country:'es'
+                }
+            }
+        };
+
+        $scope.markerId= 100;
+        $scope.auxPos = 'top-right';
         $scope.showMarkers = false;
         $scope.showServices = false;
         $scope.showAlternatives = false;
@@ -70,6 +111,6 @@ angular.module('transandalus')
         // Dinamically set map vertical size
         $scope.$on('$viewContentLoaded', function () {
             var mapHeight = window.innerHeight - 110;
-            $("#vita-google-map .angular-google-map-container").height(mapHeight);
+            $('#vita-google-map .angular-google-map-container').height(mapHeight);
         });
     });
