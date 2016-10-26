@@ -16,8 +16,20 @@ var useminAutoprefixer = {
 module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
     require('time-grunt')(grunt);
+    require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
     grunt.initConfig({
+        sass: {
+            options: {
+                sourceMap: true,
+                outputStyle: 'compressed'
+            },
+            dist: {
+                files: {
+                  'src/main/webapp/assets/styles/theme_oliva.css': 'src/main/webapp/assets/styles/scss/theme_oliva.scss'
+                }
+            }
+        },
         yeoman: {
             // configurable paths
             app: require('./bower.json').appPath || 'app',
@@ -31,6 +43,10 @@ module.exports = function (grunt) {
             ngconstant: {
                 files: ['Gruntfile.js', 'bower.json'],
                 tasks: ['ngconstant:dev']
+            },
+            sass: {
+                files: ['src/main/webapp/assets/styles/scss/*.scss'],
+                tasks: ['sass']
             }
         },
         autoprefixer: {
@@ -295,6 +311,7 @@ module.exports = function (grunt) {
         'clean:server',
         'wiredep',
         'ngconstant:dev',
+        'sass',
         'browserSync',
         'watch'
     ]);
@@ -328,6 +345,6 @@ module.exports = function (grunt) {
         'htmlmin'
     ]);
 
-    
+
     grunt.registerTask('default', ['serve']);
 };
