@@ -1,0 +1,21 @@
+// Theme by Beatriz Doblas for TransAndalus site
+$font-stack: Raleway, Helvetica, sans-serif;
+$primary-color: #317f6d;
+
+h1 {
+    font-family: $font-stack;
+    font-size: 33px;
+    font-weight: 800;
+    line-height: 36.3px;
+    text-transform: uppercase;
+    color: white;
+}
+
+nav{
+    a{
+        font-family: $font-stack;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: white;
+    }
+}

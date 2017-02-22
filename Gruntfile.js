@@ -26,7 +26,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                  'src/main/webapp/assets/styles/theme_oliva.css': 'src/main/webapp/assets/styles/scss/theme_oliva.scss'
+                  'src/main/webapp/assets/styles/theme_beatriz.css': 'src/main/webapp/assets/styles/scss/theme_beatriz.scss'
                 }
             }
         },

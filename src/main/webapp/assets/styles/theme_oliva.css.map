@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "theme_oliva.css",
-	"sources": [
-		"scss/theme_oliva.scss"
-	],
-	"mappings": "",
-	"names": []
-}
