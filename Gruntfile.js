@@ -43,11 +43,11 @@ module.exports = function (grunt) {
             ngconstant: {
                 files: ['Gruntfile.js', 'bower.json'],
                 tasks: ['ngconstant:dev']
-            },
+            }/*,
             sass: {
                 files: ['src/main/webapp/assets/styles/scss/*.scss'],
                 tasks: ['sass']
-            }
+            }*/
         },
         autoprefixer: {
             // src and dest is configured in a subtask called "generated" by usemin
@@ -311,7 +311,7 @@ module.exports = function (grunt) {
         'clean:server',
         'wiredep',
         'ngconstant:dev',
-        'sass',
+        //'sass',
         'browserSync',
         'watch'
     ]);
