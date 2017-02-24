@@ -4,10 +4,10 @@ $primary-color: #317f6d;
 
 body{
     background-color: lightskyblue;
+    font-family: $font-stack;
 }
 
 h1 {
-    font-family: $font-stack;
     font-size: 33px;
     font-weight: 800;
     line-height: 36.3px;
@@ -23,9 +23,6 @@ h1 {
     z-index: 1;
 }
 
-.navbar-toggle[aria-expanded=true]{
-}
-
 .navbar-collapse {
     @media screen and (max-width: 767px){
         position: absolute;
@@ -36,6 +33,7 @@ h1 {
         background: $primary-color;
         text-align: left;
         width: 225px;
+        max-height: 500px !important;
         box-shadow: none;
         z-index: 0;
     }
@@ -43,7 +41,6 @@ h1 {
 
 nav{
     a{
-        font-family: $font-stack;
         font-size: 14px;
         text-transform: uppercase;
         color: white !important;
@@ -51,16 +48,33 @@ nav{
     }
 
     a:hover{
-        @media screen and (max-width: 767px){
-            color: white !important;
-        }
         @media screen and (min-width: 768px){
             color: $primary-color !important;
         }
 
+        @media screen and (max-width: 767px){
+            color: white !important;
+        }
     }
 
     .dropdown-menu{
         background-color: transparent;
+    }
+}
+
+#welcome{
+    @media screen and (min-width: 768px){
+        height: 500px;
+    }
+
+    @media screen and (max-width: 767px){
+        height: 300px;
+    }
+
+    color: white;
+    a{
+        color:white;
+        text-decoration: underline;
+        text-transform: uppercase;
     }
 }
