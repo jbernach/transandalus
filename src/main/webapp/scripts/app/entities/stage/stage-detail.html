@@ -13,10 +13,10 @@
                     <ui-gmap-layer type="KmlLayer" options="map.kmlLayerOptions"></ui-gmap-layer>
                 </ui-gmap-google-map>
             </div>
-        
+
             <p>
                 <a href="{{map.kmlLayerOptions.url}}" download="{{stage.track.name}}" target="_blank" translate="transandalus.stage.downloadTrack" class="btn btn-default">Download track</a>
-                <a ng-if="stage.galleryURL" translate="transandalus.stage.galleryURL" src="{{stage.galleryURL}}" class="pull-right">GalleryURL</a>
+                <a ng-if="stage.galleryURL" translate="transandalus.stage.galleryURL" href="{{stage.galleryURL}}" class="pull-right">GalleryURL</a>
             </p>
         </div>
     </section>

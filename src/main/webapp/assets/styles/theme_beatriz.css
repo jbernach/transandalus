@@ -1,3 +1,6 @@
+body {
+  background-color: lightskyblue; }
+
 h1 {
   font-family: Raleway, Helvetica, sans-serif;
   font-size: 33px;
@@ -6,10 +9,38 @@ h1 {
   text-transform: uppercase;
   color: white; }
 
+.navbar-toggle .icon-bar {
+  background-color: white; }
+
+.navbar-toggle {
+  z-index: 1; }
+
+@media screen and (max-width: 767px) {
+  .navbar-collapse {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding-top: 34px;
+    padding-right: 40px;
+    background: #317f6d;
+    text-align: left;
+    width: 225px;
+    box-shadow: none;
+    z-index: 0; } }
+
 nav a {
   font-family: Raleway, Helvetica, sans-serif;
   font-size: 14px;
   text-transform: uppercase;
-  color: white; }
+  color: white !important;
+  background-color: transparent !important; }
+@media screen and (max-width: 767px) {
+  nav a:hover {
+    color: white !important; } }
+@media screen and (min-width: 768px) {
+  nav a:hover {
+    color: #317f6d !important; } }
+nav .dropdown-menu {
+  background-color: transparent; }
 
 /*# sourceMappingURL=theme_beatriz.css.map */

@@ -2,6 +2,10 @@
 $font-stack: Raleway, Helvetica, sans-serif;
 $primary-color: #317f6d;
 
+body{
+    background-color: lightskyblue;
+}
+
 h1 {
     font-family: $font-stack;
     font-size: 33px;
@@ -11,11 +15,52 @@ h1 {
     color: white;
 }
 
+.navbar-toggle .icon-bar{
+    background-color: white;
+}
+
+.navbar-toggle{
+    z-index: 1;
+}
+
+.navbar-toggle[aria-expanded=true]{
+}
+
+.navbar-collapse {
+    @media screen and (max-width: 767px){
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding-top: 34px;
+        padding-right: 40px;
+        background: $primary-color;
+        text-align: left;
+        width: 225px;
+        box-shadow: none;
+        z-index: 0;
+    }
+}
+
 nav{
     a{
         font-family: $font-stack;
         font-size: 14px;
         text-transform: uppercase;
-        color: white;
+        color: white !important;
+        background-color: transparent !important;
+    }
+
+    a:hover{
+        @media screen and (max-width: 767px){
+            color: white !important;
+        }
+        @media screen and (min-width: 768px){
+            color: $primary-color !important;
+        }
+
+    }
+
+    .dropdown-menu{
+        background-color: transparent;
     }
 }
