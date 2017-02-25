@@ -1,1 +1,0 @@
-../release/angular-recaptcha.js

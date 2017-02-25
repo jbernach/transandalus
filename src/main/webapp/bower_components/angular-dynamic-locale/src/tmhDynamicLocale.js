@@ -30,11 +30,13 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
 
   var defaultLocale,
     localeLocationPattern = 'angular/i18n/angular-locale_{{locale}}.js',
+    nodeToAppend,
     storageFactory = 'tmhDynamicLocaleStorageCache',
     storage,
     storageKey = STORAGE_KEY,
     promiseCache = {},
-    activeLocale;
+    activeLocale,
+    extraProperties = {};
 
   /**
    * Loads a script asynchronously
@@ -44,7 +46,7 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
    */
   function loadScript(url, callback, errorCallback, $timeout) {
     var script = document.createElement('script'),
-      body = document.getElementsByTagName('body')[0],
+      element = nodeToAppend ? nodeToAppend : document.getElementsByTagName("body")[0],
       removed = false;
 
     script.type = 'text/javascript';
@@ -57,7 +59,7 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
             function () {
               if (removed) return;
               removed = true;
-              body.removeChild(script);
+              element.removeChild(script);
               callback();
             }, 30, false);
         }
@@ -66,19 +68,19 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
       script.onload = function () {
         if (removed) return;
         removed = true;
-        body.removeChild(script);
+        element.removeChild(script);
         callback();
       };
       script.onerror = function () {
         if (removed) return;
         removed = true;
-        body.removeChild(script);
+        element.removeChild(script);
         errorCallback();
       };
     }
     script.src = url;
     script.async = true;
-    body.appendChild(script);
+    element.appendChild(script);
   }
 
   /**
@@ -147,7 +149,7 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
         localeCache.put(localeId, externalLocale);
         delete promiseCache[localeId];
 
-        $rootScope.$apply(function() {
+        $rootScope.$applyAsync(function() {
           storage.put(storageKey, localeId);
           $rootScope.$broadcast('$localeChangeSuccess', localeId, $locale);
           deferred.resolve($locale);
@@ -155,7 +157,7 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
       }, function() {
         delete promiseCache[localeId];
 
-        $rootScope.$apply(function() {
+        $rootScope.$applyAsync(function() {
           if (activeLocale === localeId) {
             activeLocale = $locale.id;
           }
@@ -174,6 +176,10 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
     } else {
       return localeLocationPattern;
     }
+  };
+
+  this.appendScriptTo = function(nodeElement) {
+    nodeToAppend = nodeElement;
   };
 
   this.useStorage = function(storageName) {
@@ -195,6 +201,10 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
     } else {
       return storageKey;
     }
+  };
+
+  this.addLocalePatternValue = function(key, value) {
+    extraProperties[key] = value;
   };
 
   this.$get = ['$rootScope', '$injector', '$interpolate', '$locale', '$q', 'tmhDynamicLocaleCache', '$timeout', function($rootScope, $injector, interpolate, locale, $q, tmhDynamicLocaleCache, $timeout) {
@@ -226,7 +236,8 @@ angular.module('tmh.dynamicLocale', []).config(['$provide', function($provide) {
     };
 
     function loadLocaleFn(localeId) {
-      return loadLocale(localeLocation({locale: localeId, angularVersion: angular.version.full}), locale, localeId, $rootScope, $q, tmhDynamicLocaleCache, $timeout);
+      var baseProperties = {locale: localeId, angularVersion: angular.version.full};
+      return loadLocale(localeLocation(angular.extend({}, extraProperties, baseProperties)), locale, localeId, $rootScope, $q, tmhDynamicLocaleCache, $timeout);
     }
   }];
 }]).provider('tmhDynamicLocaleCache', function() {

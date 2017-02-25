@@ -1,36 +1,40 @@
 'use strict';
 
-var _ = require('lodash'),
-    fs = require('fs-extra'),
-    glob = require('glob'),
-    path = require('path');
-
-var minify = require('../common/minify.js');
+const _ = require('lodash');
 
 /*----------------------------------------------------------------------------*/
 
-function copyFile(srcPath, destPath) {
-  return _.partial(fs.copy, srcPath, destPath);
+/**
+ * Creates a hash object. If a `properties` object is provided, its own
+ * enumerable properties are assigned to the created hash.
+ *
+ * @memberOf util
+ * @param {Object} [properties] The properties to assign to the hash.
+ * @returns {Object} Returns the new hash object.
+ */
+function Hash(properties) {
+  return _.transform(properties, (result, value, key) => {
+    result[key] = (_.isPlainObject(value) && !(value instanceof Hash))
+      ? new Hash(value)
+      : value;
+  }, this);
 }
 
-function globTemplate(pattern) {
-  return _.transform(glob.sync(pattern), function(result, filePath) {
-    var key = path.basename(filePath, path.extname(filePath));
-    result[key] = _.template(fs.readFileSync(filePath, 'utf8'));
-  }, {});
-}
+Hash.prototype = Object.create(null);
 
-function minFile(srcPath, destPath) {
-  return _.partial(minify, srcPath, destPath);
-}
-
-function writeFile(filePath, data) {
-  return _.partial(fs.writeFile, filePath, data);
+/**
+ * This method throws any error it receives.
+ *
+ * @memberOf util
+ * @param {Object} [error] The error object.
+ */
+function pitch(error) {
+  if (error != null) {
+    throw error;
+  }
 }
 
 module.exports = {
-  'copyFile': copyFile,
-  'globTemplate': globTemplate,
-  'minFile': minFile,
-  'writeFile': writeFile
+  Hash,
+  pitch
 };

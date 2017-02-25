@@ -9,6 +9,7 @@ angular.module('transandalus')
 
         $scope.provinces = [];
         $scope.slides = [];
+        $scope.activeImage = 0;
 
         $scope.loadProvinces = function() {
             Province.query({page: 0, size: 50, sort: ['id']}, function(result) {
@@ -16,7 +17,7 @@ angular.module('transandalus')
             });
         };
 
-        var c = 1;
+        var c = 0;
         $scope.addSlide = function(url){
             $scope.slides.push({
                 image: url,
@@ -25,6 +26,6 @@ angular.module('transandalus')
         };
 
         $scope.loadProvinces();
-        $scope.addSlide('https://goo.gl/photos/qUxtGeF8mcDbHRhAA');
-        $scope.addSlide('https://goo.gl/photos/bYdNP6nUXZT1cuqd6');
+        $scope.addSlide('assets/images/home1.png');
+        $scope.addSlide('assets/images/home2.png');
     });

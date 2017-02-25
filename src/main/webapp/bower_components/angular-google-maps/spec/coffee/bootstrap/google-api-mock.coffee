@@ -1,9 +1,10 @@
 ###global _:true, angular:true, google:true ###
-capitalize = (s) ->
-  return s[0].toUpperCase() + s.slice(1)
+do ->
+  #coffeelint:disable=check_scope
+  capitalize = (s) ->
+    return s[0].toUpperCase() + s.slice(1)
+  #coffeelint:enable=check_scope
 
-angular.module('uiGmapgoogle-maps.mocks', ['uiGmapgoogle-maps'])
-.factory('GoogleApiMock', ->
   class MapObject
     getMap: =>
       @map
@@ -66,7 +67,9 @@ angular.module('uiGmapgoogle-maps.mocks', ['uiGmapgoogle-maps'])
     class Marker extends MapObject
       _.extend @::, PositionObject::, DraggableObject::, VisibleObject::
       @instances = 0
+      #coffeelint:disable=no_private_function_fat_arrows
       @resetInstances = =>
+      #coffeelint:enable=no_private_function_fat_arrows
         @instances = 0
       @creationSubscribe = (obj, cb) ->
         window.google.maps.event.addListener(obj, 'creation', cb)
@@ -116,7 +119,9 @@ angular.module('uiGmapgoogle-maps.mocks', ['uiGmapgoogle-maps'])
     class Circle extends MapObject
       _.extend @::, DraggableObject::, VisibleObject::
       @instances = 0
+      #coffeelint:disable=no_private_function_fat_arrows
       @resetInstances = =>
+      #coffeelint:enable=no_private_function_fat_arrows
         @instances = 0
       @creationSubscribe = (obj, cb) ->
         window.google.maps.event.addListener(obj, 'creation', cb)
@@ -129,16 +134,18 @@ angular.module('uiGmapgoogle-maps.mocks', ['uiGmapgoogle-maps'])
         @setOptions opts
 
         #getters
+        #coffeelint:disable=check_scope
         @props.forEach (p) =>
-          @["get#{capitalize p}"] = =>
+          @["get#{capitalize(p)}"] = =>
             @[p]
 
         #setters
         @props.forEach (p) =>
-          @["set#{capitalize p}"] = (val) =>
+          @["set#{capitalize(p)}"] = (val) =>
             @[p] = val
             if p == "radius" or p == "center"
               window.google.maps.event.fireAllListeners "#{p}_changed", @
+        #coffeelint:enable=check_scope
 
         Circle.instances += 1
         @instance = Circle.instances
@@ -189,7 +196,9 @@ angular.module('uiGmapgoogle-maps.mocks', ['uiGmapgoogle-maps'])
   getMarkerWithLabel: ->
     class MarkerWithLabel extends getMarker()
       @instances = 0
+      #coffeelint:disable=no_private_function_fat_arrows
       @resetInstances = =>
+        #coffeelint:enable=no_private_function_fat_arrows
         @instances = 0
       constructor: (opts) ->
         if opts?
@@ -222,8 +231,10 @@ angular.module('uiGmapgoogle-maps.mocks', ['uiGmapgoogle-maps'])
   getPolyline = ->
     class Polyline extends DraggableObject
       @instances = 0
+      #coffeelint:disable=no_private_function_fat_arrows
       @resetInstances = =>
         @instances = 0
+      #coffeelint:enable=no_private_function_fat_arrows
       constructor: (opts) ->
         if opts?
           ['draggable', 'editable', 'map','path', 'visible'].forEach (o) =>
@@ -242,7 +253,9 @@ angular.module('uiGmapgoogle-maps.mocks', ['uiGmapgoogle-maps'])
   getMVCArray = ->
     class MVCArray extends Array
       @instances = 0
+      #coffeelint:disable=no_private_function_fat_arrows
       @resetInstances = =>
+      #coffeelint:enable=no_private_function_fat_arrows
         @instances = 0
       constructor: ->
         MVCArray.instances += 1
@@ -479,5 +492,10 @@ angular.module('uiGmapgoogle-maps.mocks', ['uiGmapgoogle-maps'])
     getPolyline: getPolyline
     getMVCArray: getMVCArray
     getLatLng: getLatLng
-  GoogleApiMock
-)
+
+  (new GoogleApiMock()).initAll()
+
+  angular.module('uiGmapgoogle-maps.mocks', ['uiGmapgoogle-maps'])
+  .factory('GoogleApiMock', ->
+    GoogleApiMock
+  )

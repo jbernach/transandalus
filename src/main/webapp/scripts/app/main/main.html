@@ -11,7 +11,7 @@
   	</div>
 
     <div style="height: 305px">
-        <div uib-carousel interval="500" no-wrap="false">
+        <div uib-carousel active="activeImage" no-wrap="false">
             <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                 <img ng-src="{{slide.image}}" style="margin:auto;">
             </div>

@@ -83,17 +83,7 @@
 
         // Set bad shims.
         setProperty(Object, '_create', Object.create);
-        setProperty(Object, 'create', (function() {
-          function object() {}
-          return function(prototype) {
-            if (prototype === Object(prototype)) {
-              object.prototype = prototype;
-              var result = new object;
-              object.prototype = undefined;
-            }
-            return result || {};
-          };
-        }()));
+        setProperty(Object, 'create', undefined);
 
         setProperty(Object, '_getOwnPropertySymbols', Object.getOwnPropertySymbols);
         setProperty(Object, 'getOwnPropertySymbols', undefined);
@@ -119,6 +109,9 @@
 
           setProperty(Map, 'toString', createToString('Map'));
         }
+        setProperty(window, '_Promise', window.Promise);
+        setProperty(window, 'Promise', noop);
+
         setProperty(window, '_Set', window.Set);
         setProperty(window, 'Set', noop);
 
@@ -158,6 +151,11 @@
         } else {
           setProperty(window, 'Map', undefined);
         }
+        if (_Promise) {
+          Promise = _Promise;
+        } else {
+          setProperty(window, 'Promise', undefined);
+        }
         if (_Set) {
           Set = _Set;
         } else {
@@ -172,6 +170,7 @@
           setProperty(window, 'WeakMap', undefined);
         }
         setProperty(window, '_Map', undefined);
+        setProperty(window, '_Promise', undefined);
         setProperty(window, '_Set', undefined);
         setProperty(window, '_Symbol', undefined);
         setProperty(window, '_WeakMap', undefined);
