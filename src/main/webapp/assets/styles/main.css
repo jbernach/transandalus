@@ -1,10 +1,3 @@
-body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
-    padding-top: 70px;
-}
-
 /* ==========================================================================
 Hide ng-cloak on page load, https://docs.angularjs.org/api/ng/directive/ngCloak
 ========================================================================== */
@@ -201,63 +194,5 @@ Social Buttons
 
 /* jhipster-needle-css-add-main JHipster will add new css style */
 
-.angular-google-map-container { height: 400px; }
-
 
 /* Theme: by default */
-/*
-.navbar-fixed-top {
-  background-color: inherit;
-  border-width: 0;
-}
-
-.navbar-fixed-top .navbar-nav > li > a {
-  color: white;
-  text-transform: uppercase;
-}
-
-.navbar-fixed-top .navbar-right {
-  margin-right: 0;
-}
-
-.navbar-fixed-top .navbar-nav > li > a:hover {
-  color: #ddd;
-}
-
-.navbar-fixed-top .navbar-nav > li.active > a {
-  background-color: inherit;
-  color: white;
-}
-
-body {
-  padding-top: 0;
-}
-
-section.first {
-  background-image: url('/assets/images/home_main_bg.jpg');
-  background-size: 100%;
-  background-position: center center;
-  min-height: 500px;
-  padding: 2em 0;
-  color: white;
-}
-
-section.first,
-section.first a {
-  color: white;
-  text-transform: uppercase;
-}
-
-section.first h1 {
-  font-weight: bolder;
-  margin: 3em 0 0.5em;
-}
-
-section.first .lead {
-  margin-bottom: 3em;
-}
-
-.main-province {
-  text-decoration: underline;
-}
-*/

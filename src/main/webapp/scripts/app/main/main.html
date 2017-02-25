@@ -1,6 +1,14 @@
 <section id="welcome" ng-cloak>
-    <h1 translate="main.title" class="text-center">Bienvenidos a TransAndalus</h1>
-    <p class="lead text-center" translate="main.subtitle">Una ruta en bicicleta de montaña de 2000 Km por Andalucía</p>
+    <div uib-carousel active="activeImage" no-wrap="false" interval="4000">
+        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+            <img ng-src="{{slide.image}}">
+        </div>
+    </div>
+
+    <div id="title-overlay">
+        <h1 translate="main.title" class="center-block text-center">Bienvenidos a TransAndalus</h1>
+        <p class="lead text-center" translate="main.subtitle">Una ruta en bicicleta de montaña de 2000 Km por Andalucía</p>
+    </div>
 
     <div class="row">
         <div class="col-sm-2"></div>
@@ -10,17 +18,9 @@
         <div class="col-sm-2"></div>
   	</div>
 
-    <div style="height: 305px">
-        <div uib-carousel active="activeImage" no-wrap="false">
-            <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                <img ng-src="{{slide.image}}" style="margin:auto;">
-            </div>
-        </div>
-    </div>
-
 </section>
 <section>
-    <h1 class="text-center">Cicloturismo en un click</h1>
+    <h2 class="text-center">Cicloturismo en un click</h2>
     <div class="row">
     	<div class="col-sm-4">
     		<div class="text-center">
@@ -49,10 +49,10 @@
     </div>
 </section>
 <section>
-    <h1 class="text-center">Trazado de la ruta</h1>
+    <h2 class="text-center">Trazado de la ruta</h2>
 </section>
 <section>
-    <h1 class="text-center">Transandaluceros felices</h1>
+    <h2 class="text-center">Transandaluceros felices</h2>
     <div class="row">
     	<div class="col-sm-4">
     		<div class="text-center">
