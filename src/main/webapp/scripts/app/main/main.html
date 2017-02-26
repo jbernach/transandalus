@@ -8,17 +8,25 @@
     <div id="title-overlay">
         <h1 translate="main.title" class="center-block text-center">Bienvenidos a TransAndalus</h1>
         <p class="lead text-center" translate="main.subtitle">Una ruta en bicicleta de montaña de 2000 Km por Andalucía</p>
-    </div>
+        <div class="row">
+            <div class="visible-md-block visible-lg-block text-center">
+                <span class="text-center" ng-repeat="province in provinces track by province.id">
+                    <h4><a ui-sref="province.detail({id:province.id})">{{province.name}}</a></h4>
+                </span>
+            </div>
 
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-xs-6 col-sm-1 text-center" ng-repeat="province in provinces track by province.id">
-            <h4><a ui-sref="province.detail({id:province.id})">{{province.name}}</a></h4>
+            <div class="hidden-md hidden-lg text-center" ng-repeat="row in [1,2]">
+                <div class="row">
+                    <div class="col-xs-6 text-center" ng-repeat="province in provinces track by province.id" ng-if="$index >= (row -1)*4 && $index < (row)*4">
+                        <h4><a ui-sref="province.detail({id:province.id})">{{province.name}}</a></h4>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="col-sm-2"></div>
-  	</div>
-
+    </div>
 </section>
+
 <section>
     <h2 class="text-center">Cicloturismo en un click</h2>
     <div class="row">

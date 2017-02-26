@@ -64,7 +64,7 @@ nav .dropdown-menu {
     text-decoration: underline;
     text-transform: uppercase; }
   #welcome #title-overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0); }
@@ -73,6 +73,14 @@ nav .dropdown-menu {
     #welcome #title-overlay p {
       margin-top: 20px;
       font-size: 1.8em; }
+    #welcome #title-overlay h4 {
+      display: inline-block; }
+      @media screen and (min-width: 768px) {
+        #welcome #title-overlay h4 {
+          padding: 0px 8px 0px 8px; } }
+      @media screen and (max-width: 767px) {
+        #welcome #title-overlay h4 {
+          padding: 0px 3px 0px 3px; } }
 
 .angular-google-map-container {
   height: 400px; }

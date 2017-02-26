@@ -84,7 +84,7 @@ nav{
                 @media screen and (max-width: 767px){
                     height: 500px;
                 }
-                
+
                 object-fit: cover;
                 width: 100%;
             }
@@ -99,7 +99,7 @@ nav{
     }
 
     #title-overlay{
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 50%;
         transform: translate(-50%, 0);
@@ -111,6 +111,17 @@ nav{
         p{
             margin-top: 20px;
             font-size: 1.8em;
+        }
+
+        h4{
+            display: inline-block;
+
+            @media screen and (min-width: 768px) {
+                padding: 0px 8px 0px 8px;
+            }
+            @media screen and (max-width: 767px) {
+                padding: 0px 3px 0px 3px;
+            }
         }
     }
 }
