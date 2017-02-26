@@ -6,19 +6,19 @@
     </div>
 
     <div id="title-overlay">
-        <h1 translate="main.title" class="center-block text-center">Bienvenidos a TransAndalus</h1>
-        <p class="lead text-center" translate="main.subtitle">Una ruta en bicicleta de montaña de 2000 Km por Andalucía</p>
+        <h1 translate="main.title" class="negative center-block">Bienvenidos a TransAndalus</h1>
+        <p class="negative lead text-center" translate="main.subtitle">Una ruta en bicicleta de montaña de 2000 Km por Andalucía</p>
         <div class="row">
             <div class="visible-md-block visible-lg-block text-center">
                 <span class="text-center" ng-repeat="province in provinces track by province.id">
-                    <h4><a ui-sref="province.detail({id:province.id})">{{province.name}}</a></h4>
+                    <h4><a class="negative" ui-sref="province.detail({id:province.id})">{{province.name}}</a></h4>
                 </span>
             </div>
 
             <div class="hidden-md hidden-lg text-center" ng-repeat="row in [1,2]">
                 <div class="row">
                     <div class="col-xs-6 text-center" ng-repeat="province in provinces track by province.id" ng-if="$index >= (row -1)*4 && $index < (row)*4">
-                        <h4><a ui-sref="province.detail({id:province.id})">{{province.name}}</a></h4>
+                        <h4><a class="negative" ui-sref="province.detail({id:province.id})">{{province.name}}</a></h4>
                     </div>
                 </div>
             </div>
@@ -27,29 +27,32 @@
     </div>
 </section>
 
-<section>
-    <h2 class="text-center">Cicloturismo en un click</h2>
+<section id="ciclotourism-steps">
+    <h2 translate="main.ciclotourism.title">Cicloturismo en un click</h2>
     <div class="row">
     	<div class="col-sm-4">
     		<div class="text-center">
-    			<h4>Planea la ruta</h4>
-    			<p>
+                <img src="assets/images/map.svg" />
+    			<h3 translate="main.ciclotourism.step1.title">Planea la ruta</h3>
+    			<p translate="main.ciclotourism.step1.body">
     				Elige destino acorde con tu nivel físico, el tiempo que tengas y tus apetencias: barrancos o valles, playa o montaña, ciudades o pueblos, ¡hay de todo y para todos!
     			</p>
     		</div>
     	</div>
     	<div class="col-sm-4">
     		<div class="text-center">
-    			<h4>Descarga el track</h4>
-    			<p>
+                <img src="assets/images/phone.svg" />
+    			<h3 translate="main.ciclotourism.step2.title">Descarga el track</h3>
+    			<p translate="main.ciclotourism.step2.body">
     				Accede a tus tramos seleccionados en tu sección personal "Mi aventura" y bájate los tracks de cada ruta gratis. También puedes guardar tramos para la próxima en "Mis favoritos".
     			</p>
     		</div>
     	</div>
     	<div class="col-sm-4">
     		<div class="text-center">
-    			<h4>¡A dar pedales!</h4>
-    			<p>
+                <img src="assets/images/bike.svg" />
+    			<h3 translate="main.ciclotourism.step3.title">¡A dar pedales!</h3>
+    			<p translate="main.ciclotourism.step3.body">
     				Accede a la ruta desde tu móvil o gps y ¡a disfrutar de la gastronomía, la gente y los paisajes de Andalucía! No olvides bajarte un mapa off-line de la zona.
     			</p>
     		</div>
@@ -57,10 +60,10 @@
     </div>
 </section>
 <section>
-    <h2 class="text-center">Trazado de la ruta</h2>
+    <h2 translate="main.outline.title">Trazado de la ruta</h2>
 </section>
 <section>
-    <h2 class="text-center">Transandaluceros felices</h2>
+    <h2>Transandaluceros felices</h2>
     <div class="row">
     	<div class="col-sm-4">
     		<div class="text-center">

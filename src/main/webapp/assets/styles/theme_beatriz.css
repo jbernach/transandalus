@@ -1,86 +1,125 @@
+.negative {
+  color: white !important; }
+
 body {
-  background-color: lightskyblue;
+  background-color: white;
   font-size: 14px;
   font-family: Raleway, Helvetica, sans-serif; }
 
 h1 {
   font-size: 3.5em;
   font-weight: 800;
-  text-transform: uppercase;
-  color: white; }
+  text-align: center;
+  text-transform: uppercase; }
   @media screen and (max-width: 767px) {
     h1 {
       font-size: 2em; } }
 
+h2 {
+  font-size: 3.3em;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 1.5em 0px 1.5em 0px; }
+  @media screen and (max-width: 767px) {
+    h2 {
+      font-size: 1.8em; } }
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: #317f6d; }
+
+p {
+  font-size: 1.5em;
+  color: #4d4d4d; }
+
 .navbar-toggle .icon-bar {
   background-color: white; }
 
-nav .navbar-toggle {
-  z-index: 1; }
-nav .navbar-collapse {
-  padding-left: 20px !important;
-  padding-right: 20px !important; }
+nav {
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    nav {
+      position: absolute !important; } }
   @media screen and (max-width: 767px) {
-    nav .navbar-collapse {
-      position: absolute;
-      right: 0px;
-      top: 0px;
-      padding-top: 34px;
-      padding-right: 40px;
-      background: #317f6d;
-      text-align: left;
-      width: 225px;
-      max-height: 500px !important;
-      box-shadow: none;
-      z-index: 0; } }
-nav a {
-  font-size: 1em;
-  text-transform: uppercase;
-  color: white !important;
-  background-color: transparent !important; }
-@media screen and (min-width: 768px) {
-  nav a:hover {
-    text-decoration: underline !important; } }
-@media screen and (max-width: 767px) {
-  nav a:hover {
-    text-decoration: underline !important;
-    color: white !important; } }
-nav .dropdown-menu {
-  background-color: transparent; }
-
-#welcome {
-  color: white; }
-  #welcome .carousel div[uib-slide] img {
-    object-fit: cover;
-    width: 100%; }
-    @media screen and (min-width: 768px) {
-      #welcome .carousel div[uib-slide] img {
-        height: 500px; } }
+    nav {
+      position: fixed !important; } }
+  nav .navbar-toggle {
+    z-index: 1; }
+  nav .navbar-collapse {
+    padding-left: 20px !important;
+    padding-right: 20px !important; }
     @media screen and (max-width: 767px) {
-      #welcome .carousel div[uib-slide] img {
-        height: 500px; } }
-  #welcome a {
-    color: white;
-    text-decoration: underline;
-    text-transform: uppercase; }
-  #welcome #title-overlay {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0); }
-    #welcome #title-overlay h1 {
-      margin-top: 25%; }
-    #welcome #title-overlay p {
-      margin-top: 20px;
-      font-size: 1.8em; }
-    #welcome #title-overlay h4 {
-      display: inline-block; }
-      @media screen and (min-width: 768px) {
-        #welcome #title-overlay h4 {
-          padding: 0px 8px 0px 8px; } }
-      @media screen and (max-width: 767px) {
-        #welcome #title-overlay h4 {
-          padding: 0px 3px 0px 3px; } }
+      nav .navbar-collapse {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding-top: 34px;
+        padding-right: 40px;
+        background: #317f6d;
+        text-align: left;
+        width: 225px;
+        max-height: 500px !important;
+        box-shadow: none;
+        z-index: 0; } }
+  nav a {
+    font-size: 1em;
+    text-transform: uppercase;
+    color: white !important;
+    background-color: transparent !important; }
+  @media screen and (min-width: 768px) {
+    nav a:hover {
+      text-decoration: underline !important; } }
+  @media screen and (max-width: 767px) {
+    nav a:hover {
+      text-decoration: underline !important;
+      color: white !important; } }
+  nav .dropdown-menu {
+    background-color: transparent; }
+
+#welcome .carousel div[uib-slide] img {
+  object-fit: cover;
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    #welcome .carousel div[uib-slide] img {
+      height: 500px; } }
+  @media screen and (max-width: 767px) {
+    #welcome .carousel div[uib-slide] img {
+      height: 500px; } }
+#welcome a {
+  text-decoration: underline;
+  text-transform: uppercase; }
+#welcome #title-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0); }
+  #welcome #title-overlay h1 {
+    margin-top: 25%; }
+  #welcome #title-overlay p {
+    margin-top: 1em;
+    font-size: 1.8em; }
+  #welcome #title-overlay h4 {
+    display: inline-block; }
+    @media screen and (min-width: 768px) {
+      #welcome #title-overlay h4 {
+        padding: 0px 8px 0px 8px; } }
+    @media screen and (max-width: 767px) {
+      #welcome #title-overlay h4 {
+        padding: 0px 3px 0px 3px; } }
+
+#ciclotourism-steps img {
+  width: 60%; }
+#ciclotourism-steps h3 {
+  margin: 1em 0 1em 0; }
+#ciclotourism-steps p {
+  margin: 0px 0px 1.5em 0px; }
 
 .angular-google-map-container {
   height: 400px; }

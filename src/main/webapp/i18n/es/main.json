@@ -1,7 +1,25 @@
 {
     "main": {
         "title": "Bienvenidos a TransAndalus",
-        "subtitle": "Una ruta de bicicleta de montaña de 2000 Km por Andalucía",
+        "subtitle": "Una ruta en bicicleta de montaña de 2000 Km por Andalucía",
+        "ciclotourism": {
+            "title": "Cicloturismo en un click",
+            "step1":{
+                "title": "Planea la ruta",
+                "body": "Elige destino acorde con tu nivel físico, el tiempo que tengas y tus apetencias: barrancos o valles, playa o montaña, ciudades o pueblos, ¡hay de todo y para todos!"
+            },
+            "step2":{
+                "title": "Descarga el track",
+                "body": "Accede a tus tramos seleccionados en tu sección personal y bájate los tracks de cada ruta gratis. También puedes guardar tramos favoritos para la próxima vez."
+            },
+            "step3":{
+                "title": "¡A dar pedales!",
+                "body": "Accede a la ruta desde tu móvil o gps y ¡a disfrutar de la gastronomía, la gente y los paisajes de Andalucía! No olvides bajarte un mapa off-line de la zona."
+            }
+        },
+        "outline": {
+            "title": "Trazado de la ruta"
+        },
         "logged": {
             "message": "Está conectado como \"{{username}}\"."
         },

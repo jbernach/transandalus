@@ -2,6 +2,24 @@
     "main": {
         "title": "Welcome to TransAndalus",
         "subtitle": "A 2000 Km MTB route through Andalusia",
+        "ciclotourism": {
+            "title": "One-click bike tourism",
+            "step1":{
+                "title": "Plan your route",
+                "body": "Choose destination considering your physical preparation, your agenda and your likes: ravines or valleys, beach or mountain, cities or villages, there are plenty for everyone!"
+            },
+            "step2":{
+                "title": "Download the track",
+                "body": "View your selected stages in 'My adventure' personal section and download the tracks for free. You can also save your favourites stages for the next time."
+            },
+            "step3":{
+                "title": "Go cicling!",
+                "body": "Browse your route from your smartphone or gps and enjoy the Andalusian gastronomy, people and landscapes! Don't forget to download an off-line map of the zone."
+            }
+        },
+        "outline": {
+            "title": "Route outline"
+        },
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
