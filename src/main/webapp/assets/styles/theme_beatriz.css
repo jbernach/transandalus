@@ -36,6 +36,12 @@ p {
   font-size: 1.5em;
   color: #4d4d4d; }
 
+.aligned-row {
+  display: flex;
+  flex-flow: row wrap; }
+  .aligned-row::before {
+    display: block; }
+
 .navbar-toggle .icon-bar {
   background-color: white; }
 
@@ -83,6 +89,10 @@ nav {
   nav .dropdown-menu {
     background-color: transparent; }
 
+@media screen and (max-width: 767px) {
+  #welcome {
+    margin-left: -15px;
+    margin-right: -15px; } }
 #welcome .carousel div[uib-slide] img {
   object-fit: cover;
   width: 100%; }
@@ -120,6 +130,16 @@ nav {
   margin: 1em 0 1em 0; }
 #ciclotourism-steps p {
   margin: 0px 0px 1.5em 0px; }
+
+#happy-travelers [class*='col-'] {
+  margin-bottom: 1em; }
+#happy-travelers .traveler {
+  background-color: #f0f0f0;
+  padding: 2em;
+  text-align: center;
+  height: 100%; }
+  #happy-travelers .traveler img {
+    width: 100%; }
 
 .angular-google-map-container {
   height: 400px; }
