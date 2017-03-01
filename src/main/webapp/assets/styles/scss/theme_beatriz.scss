@@ -194,6 +194,35 @@ nav{
     }
 }
 
+#route-outline{
+    #outline-container{
+        background-image: url(../images/mapbg.jpg);
+        @media screen and (min-width: 768px) {
+            height: 600px;
+        }
+        @media screen and (max-width: 767px) {
+            background-position-y: -175px;
+            height: 250px;
+        }
+
+        overflow: hidden;
+
+        h2{
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        img{
+            @media screen and (min-width: 768px) {
+                height: 75%;
+            }
+            @media screen and (max-width: 767px) {
+                width: 75%;
+            }
+        }
+    }
+}
+
 #happy-travelers{
     [class*='col-']{
         margin-bottom: 1em;
