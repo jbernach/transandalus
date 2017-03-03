@@ -26,14 +26,14 @@ angular.module('transandalus')
         };
 
         $scope.loadProvinces();
-        $scope.addSlide('assets/images/home-al.png');
-        $scope.addSlide('assets/images/home-ca.png');
-        $scope.addSlide('assets/images/home-co.png');
-        $scope.addSlide('assets/images/home-gr.png');
-        $scope.addSlide('assets/images/home-hu.png');
-        $scope.addSlide('assets/images/home-ja.png');
-        $scope.addSlide('assets/images/home-ma.png');
-        $scope.addSlide('assets/images/home-se.png');
+        $scope.addSlide('assets/images/home-al.jpg');
+        $scope.addSlide('assets/images/home-ca.jpg');
+        $scope.addSlide('assets/images/home-co.jpg');
+        $scope.addSlide('assets/images/home-gr.jpg');
+        $scope.addSlide('assets/images/home-hu.jpg');
+        $scope.addSlide('assets/images/home-ja.jpg');
+        $scope.addSlide('assets/images/home-ma.jpg');
+        $scope.addSlide('assets/images/home-se.jpg');
 
         angular.element(document).ready(function () {
             document.querySelectorAll('.province-outline').forEach(function(el){
