@@ -1,5 +1,6 @@
 .negative {
-  color: white !important; }
+  color: white !important;
+  text-shadow: 1px 1px black; }
 
 body {
   background-color: white;
@@ -78,7 +79,8 @@ nav {
     font-size: 1em;
     text-transform: uppercase;
     color: white !important;
-    background-color: transparent !important; }
+    background-color: transparent !important;
+    text-shadow: 1px 1px black; }
   @media screen and (min-width: 768px) {
     nav a:hover {
       text-decoration: underline !important; } }
@@ -111,7 +113,7 @@ nav {
   left: 50%;
   transform: translate(-50%, 0); }
   #welcome #title-overlay h1 {
-    margin-top: 25%; }
+    margin-top: 20%; }
   #welcome #title-overlay p {
     margin-top: 1em;
     font-size: 1.8em; }
