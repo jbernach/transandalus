@@ -196,6 +196,7 @@ nav{
 
 #route-outline{
     #outline-container{
+        transition: all 1s;
         background-image: url(../images/mapbg.jpg);
         @media screen and (min-width: 768px) {
             height: 600px;
@@ -212,13 +213,32 @@ nav{
             margin-bottom: 0.5em;
         }
 
-        img{
+        #mapa-ta-svg{
             @media screen and (min-width: 768px) {
                 height: 75%;
             }
             @media screen and (max-width: 767px) {
                 width: 75%;
             }
+        }
+
+        .province-outline {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            stroke: #FFFFFF;
+            stroke-width: 2;
+            stroke-miterlimit: 3.864;
+            fill: yellow;
+            fill-opacity: 0.0;
+            transition: all 1s;
+        }
+
+        .province-outline:hover {
+            stroke-width: 3px;
+            fill: greenyellow;
+            fill-opacity: 0.4;
+            transition: all 1s;
+            cursor: pointer;
         }
     }
 }
@@ -242,4 +262,8 @@ nav{
 
 .angular-google-map-container {
     height: 400px;
+}
+
+path:hover{
+    stroke: #aaaaaa;
 }

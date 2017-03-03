@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('MainController', function ($scope, Principal, Province) {
+    .controller('MainController', function ($scope, $state, Principal, Province) {
         Principal.identity().then(function(account) {
             $scope.account = account;
             $scope.isAuthenticated = Principal.isAuthenticated;
@@ -28,4 +28,16 @@ angular.module('transandalus')
         $scope.loadProvinces();
         $scope.addSlide('assets/images/home1.png');
         $scope.addSlide('assets/images/home2.png');
+
+        angular.element(document).ready(function () {
+            document.querySelectorAll('.province-outline').forEach(function(el){
+                el.addEventListener('click',function(){
+                    var province = el.getAttribute('data-province');
+                    console.debug('Map: Province' + province + 'clicked');
+                    $state.go('province.detail', {id: province});
+                },true);
+
+            });
+        });
+
     });

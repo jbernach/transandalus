@@ -132,6 +132,7 @@ nav {
   margin: 0px 0px 1.5em 0px; }
 
 #route-outline #outline-container {
+  transition: all 1s;
   background-image: url(../images/mapbg.jpg);
   overflow: hidden; }
   @media screen and (min-width: 768px) {
@@ -139,18 +140,32 @@ nav {
       height: 600px; } }
   @media screen and (max-width: 767px) {
     #route-outline #outline-container {
-      height: 400px;
       background-position-y: -175px;
       height: 250px; } }
   #route-outline #outline-container h2 {
     margin-top: 1em;
     margin-bottom: 0.5em; }
   @media screen and (min-width: 768px) {
-    #route-outline #outline-container img {
+    #route-outline #outline-container #mapa-ta-svg {
       height: 75%; } }
   @media screen and (max-width: 767px) {
-    #route-outline #outline-container img {
+    #route-outline #outline-container #mapa-ta-svg {
       width: 75%; } }
+  #route-outline #outline-container .province-outline {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    stroke: #FFFFFF;
+    stroke-width: 2;
+    stroke-miterlimit: 3.864;
+    fill: yellow;
+    fill-opacity: 0.0;
+    transition: all 1s; }
+  #route-outline #outline-container .province-outline:hover {
+    stroke-width: 3px;
+    fill: greenyellow;
+    fill-opacity: 0.4;
+    transition: all 1s;
+    cursor: pointer; }
 
 #happy-travelers [class*='col-'] {
   margin-bottom: 1em; }
@@ -164,5 +179,8 @@ nav {
 
 .angular-google-map-container {
   height: 400px; }
+
+path:hover {
+  stroke: #aaaaaa; }
 
 /*# sourceMappingURL=theme_beatriz.css.map */
