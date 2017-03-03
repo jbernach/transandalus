@@ -166,6 +166,11 @@ nav {
     fill-opacity: 0.4;
     transition: all 1s;
     cursor: pointer; }
+  #route-outline #outline-container text {
+    font-weight: 600;
+    font-size: 1.2em;
+    fill: #ffffff;
+    pointer-events: none; }
 
 #happy-travelers [class*='col-'] {
   margin-bottom: 1em; }
