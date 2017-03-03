@@ -1,6 +1,9 @@
 {
     "transandalus": {
         "province" : {
+            "detail":{
+              "title": "TransAndalus - Provincia"
+            },
             "downloadTrack": "Descargar track",
             "stages": "Etapas"
         }

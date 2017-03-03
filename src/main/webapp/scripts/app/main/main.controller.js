@@ -33,7 +33,7 @@ angular.module('transandalus')
             document.querySelectorAll('.province-outline').forEach(function(el){
                 el.addEventListener('click',function(){
                     var province = el.getAttribute('data-province');
-                    console.debug('Map: Province' + province + 'clicked');
+                    console.debug('Map: Province ' + province + ' clicked');
                     $state.go('province.detail', {id: province});
                 },true);
 
