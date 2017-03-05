@@ -84,6 +84,9 @@
         },
         "field": {
             "id": "ID"
+        },
+        "route":{
+            "title": "Route outline"
         }
     },
     "entity": {
