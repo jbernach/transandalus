@@ -87,6 +87,24 @@
         },
         "route":{
             "title":"Trazado de la ruta"
+        },
+        "happytravelers": {
+            "title": "Transandaluceros felices",
+            "traveler1":{
+                "name": "Beatriz",
+                "from": "La Palma del Condado",
+                "text": "La ruta es fantástica, pero lo que de verdad vale la pena es coger la bicicleta hasta Madrid para conocer a Bernaco en persona, es maravilloso."
+            },
+            "traveler2":{
+                "name": "Patricia",
+                "from": "Ronda",
+                "text": "Me niego a que mi cabello pierda intensidad, por eso hago cicloturismo sin casco y no me depilo las piernas. No sé qué haría sin la Transandalus."
+            },
+            "traveler3":{
+                "name": "Juan",
+                "from": "Playa de Doñana",
+                "text": "La ruta es larga, pero está bien y noscara. Se echa de menos algún descenso del mundial para negociarlo con alforjas. Recomiendo el chuletero de Alcolea sin duda."
+            }
         }
     },
     "entity": {

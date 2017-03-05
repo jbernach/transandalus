@@ -17,23 +17,6 @@
                 "body": "Browse your route from your smartphone or gps and enjoy the Andalusian gastronomy, people and landscapes! Don't forget to download an off-line map of the zone."
             }
         },
-        "happytravelers": {
-            "title": "Happy travelers",
-            "traveler1":{
-                "name": "Beatriz",
-                "from": "La Palma del Condado",
-                "text": "The route is fantastic, but what is really worth is go cicling to Madrid to know Bernaco, marvellous man."
-            },
-            "traveler2":{
-                "name": "Patricia",
-                "from": "Ronda",
-                "text": "My hair will be bright forever, so I travel in my bike without helmet and full of leg hair. What will I do without Transandalus?"
-            },
-            "traveler3":{
-                "name": "Juan",
-                "from": "Playa de Doñana",
-                "text": "The route is long, but is good and not expensive. I miss some world championship downhill to ride with my bags. I encourage you to visit Alcolea."
-        },
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
