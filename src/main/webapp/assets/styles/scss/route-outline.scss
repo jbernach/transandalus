@@ -1,0 +1,62 @@
+#route-outline{
+    #outline-container{
+        transition: all 1s;
+        background-image: url(../images/mapbg.jpg);
+        @media screen and (min-width: 768px) {
+            height: 600px;
+        }
+        @media screen and (max-width: 767px) {
+            background-position-y: -175px;
+            height: 250px;
+        }
+
+        overflow: hidden;
+
+        h2{
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        #mapa-ta-svg{
+            @media screen and (min-width: 768px) {
+                height: 75%;
+            }
+            @media screen and (max-width: 767px) {
+                width: 75%;
+            }
+        }
+
+        .province-outline {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            stroke: #FFFFFF;
+            stroke-width: 2;
+            stroke-miterlimit: 3.864;
+            fill: yellow;
+            fill-opacity: 0.0;
+            transition: all 1s;
+        }
+
+        .province-outline:hover {
+            stroke-width: 3px;
+            fill: greenyellow;
+            fill-opacity: 0.4;
+            transition: all 1s;
+            cursor: pointer;
+        }
+
+        text{
+            font-weight: 600;
+            font-size: 1.2em;
+            fill: #ffffff;
+            pointer-events: none;
+        }
+
+        #path-ruta{
+            pointer-events: none;
+            fill:none;
+            stroke:#00b618;
+            stroke-width:2;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+#main-navbar{
+    .navbar-toggle .icon-bar{
+        background-color: $negative-color;
+    }
+
+    nav{
+        @media screen and (min-width: 768px){
+            position: absolute !important;
+        }
+
+        @media screen and (max-width: 767px){
+            position: fixed !important;
+        }
+
+        top: 0;
+        left: 0;
+        z-index: 200;
+        width: 100%;
+
+        .navbar-toggle{
+            z-index: 1;
+        }
+
+        .navbar-collapse {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+
+            @media screen and (max-width: 767px){
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                padding-top: 34px;
+                padding-right: 40px;
+                background: $primary-color;
+                text-align: left;
+                width: 225px;
+                max-height: 500px !important;
+                box-shadow: none;
+                z-index: 0;
+            }
+        }
+
+        a{
+            font-size: 1em;
+            text-transform: uppercase;
+            color: $negative-color !important;
+            background-color: transparent !important;
+            text-shadow: 1px 1px black;
+        }
+
+        a:hover{
+            @media screen and (min-width: 768px){
+                text-decoration: underline !important;
+            }
+
+            @media screen and (max-width: 767px){
+                text-decoration: underline !important;
+                color: $negative-color !important;
+            }
+        }
+
+        .dropdown-menu{
+            background-color: transparent;
+        }
+    }
+}

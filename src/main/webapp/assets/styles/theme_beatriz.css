@@ -43,27 +43,26 @@ p {
   .aligned-row::before {
     display: block; }
 
-.navbar-toggle .icon-bar {
+#main-navbar .navbar-toggle .icon-bar {
   background-color: white; }
-
-nav {
+#main-navbar nav {
   top: 0;
   left: 0;
   z-index: 200;
   width: 100%; }
   @media screen and (min-width: 768px) {
-    nav {
+    #main-navbar nav {
       position: absolute !important; } }
   @media screen and (max-width: 767px) {
-    nav {
+    #main-navbar nav {
       position: fixed !important; } }
-  nav .navbar-toggle {
+  #main-navbar nav .navbar-toggle {
     z-index: 1; }
-  nav .navbar-collapse {
+  #main-navbar nav .navbar-collapse {
     padding-left: 20px !important;
     padding-right: 20px !important; }
     @media screen and (max-width: 767px) {
-      nav .navbar-collapse {
+      #main-navbar nav .navbar-collapse {
         position: absolute;
         right: 0px;
         top: 0px;
@@ -75,20 +74,20 @@ nav {
         max-height: 500px !important;
         box-shadow: none;
         z-index: 0; } }
-  nav a {
+  #main-navbar nav a {
     font-size: 1em;
     text-transform: uppercase;
     color: white !important;
     background-color: transparent !important;
     text-shadow: 1px 1px black; }
   @media screen and (min-width: 768px) {
-    nav a:hover {
+    #main-navbar nav a:hover {
       text-decoration: underline !important; } }
   @media screen and (max-width: 767px) {
-    nav a:hover {
+    #main-navbar nav a:hover {
       text-decoration: underline !important;
       color: white !important; } }
-  nav .dropdown-menu {
+  #main-navbar nav .dropdown-menu {
     background-color: transparent; }
 
 @media screen and (max-width: 767px) {
@@ -133,6 +132,16 @@ nav {
 #ciclotourism-steps p {
   margin: 0px 0px 1.5em 0px; }
 
+#happy-travelers [class*='col-'] {
+  margin-bottom: 1em; }
+#happy-travelers .traveler {
+  background-color: #f0f0f0;
+  padding: 2em;
+  text-align: center;
+  height: 100%; }
+  #happy-travelers .traveler img {
+    width: 100%; }
+
 #route-outline #outline-container {
   transition: all 1s;
   background-image: url(../images/mapbg.jpg);
@@ -173,21 +182,13 @@ nav {
     font-size: 1.2em;
     fill: #ffffff;
     pointer-events: none; }
-
-#happy-travelers [class*='col-'] {
-  margin-bottom: 1em; }
-#happy-travelers .traveler {
-  background-color: #f0f0f0;
-  padding: 2em;
-  text-align: center;
-  height: 100%; }
-  #happy-travelers .traveler img {
-    width: 100%; }
+  #route-outline #outline-container #path-ruta {
+    pointer-events: none;
+    fill: none;
+    stroke: #00b618;
+    stroke-width: 2; }
 
 .angular-google-map-container {
   height: 400px; }
-
-path:hover {
-  stroke: #aaaaaa; }
 
 /*# sourceMappingURL=theme_beatriz.css.map */
