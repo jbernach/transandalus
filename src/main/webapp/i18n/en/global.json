@@ -146,5 +146,5 @@
         "emailexists": "E-mail is already in use!",
         "idexists": "A new {{ entityName }} cannot already have an ID"
     },
-    "footer": "Copyright © TransAndalus 2016"
+    "footer": "Copyright © TransAndalus 2017"
 }

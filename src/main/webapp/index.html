@@ -18,6 +18,7 @@
         <!-- build:css assets/styles/main.css -->
         <link rel="stylesheet" href="assets/styles/main.css">
         <link rel="stylesheet" href="assets/styles/vita.css">
+        <link rel="stylesheet" href="assets/styles/social.css">
         <link rel="stylesheet" href="assets/styles/theme_beatriz.css">
         <!-- endbuild -->
     </head>
@@ -27,10 +28,7 @@
         <![endif]-->
         <div ui-view="navbar" id="main-navbar" ng-cloak=""></div>
         <div class="container" ui-view="content"></div>
-        <footer>
-            <h6><p class="text-center" translate="footer">Copyright © TransAndalus 2016</p></h6>
-        </footer>
-
+        <div ui-view="foot-navbar" id="foot-navbar" ng-cloak=""></div>
 
         <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
         <script>
@@ -110,6 +108,7 @@
     <script src="scripts/components/menu/ta-menu.directive.js"></script>
     <script src="scripts/components/navbar/navbar.directive.js"></script>
     <script src="scripts/components/navbar/navbar.controller.js"></script>
+    <script src="scripts/components/navbar/foot-navbar.controller.js"></script>
     <script src="scripts/components/route/route.directive.js"></script>
     <script src="scripts/components/travelers/travelers.directive.js"></script>
     <script src="scripts/components/user/user.service.js"></script>

@@ -88,6 +88,10 @@ angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
                 'navbar@': {
                     templateUrl: 'scripts/components/navbar/navbar.html',
                     controller: 'NavbarController'
+                },
+                'foot-navbar@': {
+                    templateUrl: 'scripts/components/navbar/foot-navbar.html',
+                    controller: 'FootNavbarController'
                 }
             },
             resolve: {
