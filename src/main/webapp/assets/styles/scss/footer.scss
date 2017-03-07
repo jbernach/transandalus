@@ -4,10 +4,11 @@
         padding-bottom: 1px;
 
         footer {
+            padding-top: 2em;
+
             nav {
                 display: flex;
                 justify-content: center;
-                padding-top: 2em;
 
                 ul {
                     list-style: none;
@@ -40,15 +41,28 @@
                 }
             }
 
-            .copyright{
-                font-size: 1em;
-                color: $negative-color;
-                text-align: center;
-            }
-
             address{
                 text-align: center;
                 color: $negative-color;
+
+                .email{
+                    @media screen and (min-width: 768px) {
+                        text-align: right;
+                    }
+                    @media screen and (max-width: 767px) {
+                        text-align: center;
+                        margin-bottom: 1em;
+                    }
+                }
+
+                .social{
+                    @media screen and (min-width: 768px) {
+                        text-align: left;
+                    }
+                    @media screen and (max-width: 767px) {
+                        text-align: center;
+                    }
+                }
 
                 a{
                     color: $negative-color;
@@ -58,8 +72,12 @@
                 a:hover{
                     text-decoration: none;
                 }
+            }
 
-
+            .copyright{
+                font-size: 1em;
+                color: $negative-color;
+                text-align: center;
             }
         }
     }
