@@ -141,6 +141,25 @@ p {
   height: 100%; }
   #happy-travelers .traveler img {
     width: 100%; }
+  #happy-travelers .traveler p {
+    font-size: 1em; }
+
+#volunteers h2 {
+  margin-bottom: 0.5em; }
+#volunteers p {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 0.5em; }
+#volunteers .volunteer {
+  text-align: center;
+  margin: 1em 0.5em; }
+  #volunteers .volunteer img {
+    width: 100%;
+    border-radius: 50%; }
+    @media screen and (max-width: 1199px) {
+      #volunteers .volunteer img {
+        width: 50%; } }
 
 #route-outline #outline-container {
   transition: all 1s;
@@ -227,7 +246,7 @@ p {
       @media screen and (max-width: 767px) {
         #foot-navbar .footer-container footer address .email {
           text-align: center;
-          margin-bottom: 2em; } }
+          margin-bottom: 1em; } }
       @media screen and (min-width: 768px) {
         #foot-navbar .footer-container footer address .social {
           text-align: left; } }
