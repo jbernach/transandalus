@@ -5,7 +5,13 @@
     }
 
     .carousel{
-        height: 500px;
+        @media screen and (min-width: 768px){
+            height: 500px;
+        }
+
+        @media screen and (max-width: 767px){
+            height: 250px;
+        }
 
         div[uib-slide]{
             img{
@@ -14,7 +20,7 @@
                 }
 
                 @media screen and (max-width: 767px){
-                    height: 500px;
+                    height: 250px;
                 }
 
                 object-fit: cover;
