@@ -47,6 +47,7 @@ h3{
 }
 
 p{
+    text-align: center;
     font-size: 1.5em;
     color: #4d4d4d;
 }
@@ -60,13 +61,47 @@ p{
     }
 }
 
+.btn{
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1em;
+    border: 3px solid transparent;
+    border-radius: 0px;
+
+    .glyphicon{
+        margin-right: 0.1em;
+    }
+}
+
+.btn-default{
+    color: $primary-color;
+    background-color: $negative-color;
+    border-color: $primary-color;
+}
+
+.btn-default:hover, .btn-default:active, .btn-default:focus{
+    color: $negative-color;
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.btn-primary{
+    color: $negative-color;
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+    color: $primary-color;
+    background-color: $negative-color;
+    border-color: $primary-color;
+}
+
 @import 'main-navbar';
 @import 'home';
 @import 'route-outline';
 @import 'footer';
 @import 'travelers';
 @import 'volunteers';
-
-.angular-google-map-container {
-    height: 400px;
-}
+@import 'province';
