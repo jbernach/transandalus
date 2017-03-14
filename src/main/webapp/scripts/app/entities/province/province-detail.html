@@ -9,28 +9,29 @@
         <h2>{{province.name}}</h2>
     </div>
 
-    <h2>Título de la provincia</h2>
+    <div class="container">
+        <h2>Título de la provincia</h2>
 
-    <section class="description" marked="province.description">
-    </section>
+        <section class="description" marked="province.description">
+        </section>
 
-    <section class="map">
-        <div ng-if="province.track.contentType">
-            <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
-                <ui-gmap-layer type="KmlLayer" options="map.kmlLayerOptions"></ui-gmap-layer>
-            </ui-gmap-google-map>
-        </div>
-    </section>
+        <section class="map">
+            <div ng-if="province.track.contentType">
+                <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
+                    <ui-gmap-layer type="KmlLayer" options="map.kmlLayerOptions"></ui-gmap-layer>
+                </ui-gmap-google-map>
+            </div>
+        </section>
 
-    <section class="buttons">
-        <a href="{{map.kmlLayerOptions.url}}" download="{{province.track.name}}" target="_blank" class="btn btn-primary">
-            <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-            <span translate="transandalus.province.downloadTrack">Download track</span>
-        </a>
-    </section>
+        <section class="buttons">
+            <a href="{{map.kmlLayerOptions.url}}" download="{{province.track.name}}" target="_blank" class="btn btn-primary">
+                <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                <span translate="transandalus.province.downloadTrack">Download track</span>
+            </a>
+        </section>
 
-    <section class="stages">
-        <h3 translate="transandalus.province.stages">Stages</h3>
+        <section class="stages">
+            <h3 translate="transandalus.province.stages">Stages</h3>
 
             <ul class="list-group">
                 <li ng-repeat="stage in stages track by stage.id" class="list-group-item">
@@ -39,5 +40,7 @@
 
             </ul>
 
-    </section>
+        </section>
+    </div>
+
 </article>

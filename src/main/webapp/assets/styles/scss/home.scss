@@ -8,7 +8,9 @@
         div[uib-slide]{
             img{
                 @media screen and (min-width: 768px){
-                    height: 500px;
+                    height: initial;
+                    min-height: 500px;
+                    max-height: 770px;
                 }
 
                 @media screen and (max-width: 767px){

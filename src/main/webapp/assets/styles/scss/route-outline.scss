@@ -1,7 +1,7 @@
 #route-outline{
     #outline-container{
         transition: all 1s;
-        background-image: url(../images/mapbg.jpg);
+        background-image: url(/assets/images/mapbg.jpg);
         @media screen and (min-width: 768px) {
             height: 600px;
         }
@@ -55,8 +55,8 @@
         #path-ruta{
             pointer-events: none;
             fill:none;
-            stroke:#00b618;
-            stroke-width:2;
+            stroke:yellow;
+            stroke-width:3;
         }
     }
 }
