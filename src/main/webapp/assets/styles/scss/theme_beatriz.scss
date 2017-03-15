@@ -48,7 +48,7 @@ h3{
 
 p{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #4d4d4d;
 
     @media screen and (max-width: 767px){
@@ -56,6 +56,11 @@ p{
     }
 }
 
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: hidden;
+}
 .aligned-row {
     display: flex;
     flex-flow: row wrap;

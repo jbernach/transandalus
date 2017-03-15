@@ -2,11 +2,12 @@
     #outline-container{
         transition: all 1s;
         background-image: url(/assets/images/mapbg.jpg);
+        background-size: cover;
+
         @media screen and (min-width: 768px) {
             height: 600px;
         }
         @media screen and (max-width: 767px) {
-            background-position-y: -175px;
             height: 250px;
         }
 
