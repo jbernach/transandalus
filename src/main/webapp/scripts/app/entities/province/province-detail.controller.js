@@ -7,8 +7,13 @@ angular.module('transandalus')
         $scope.stages = [];
 
         $scope.loadStages = function(){
-            Stage.query({page: 0, size: 100, sort: ['id'], province: $scope.province.id}, function(result, headers) {
+            Stage.query({page: 0, size: 100, sort: ['id'], province: $scope.province.id}, function(result) {
                 $scope.stages = result;
+                angular.forEach(result, function(stage){
+                    if(stage.imageUrl) {
+                        $scope.addSlide(stage.imageUrl);
+                    }
+                });
             });
         }
 
@@ -22,7 +27,6 @@ angular.module('transandalus')
             options: {scrollwheel:false}
         };
 
-      
         $scope.province.$promise.then(function(el){
             if(el.track){
                 var url = API_URL + '/tracks/'+el.track.id;
@@ -31,6 +35,14 @@ angular.module('transandalus')
 
             $scope.loadStages();
         });
-       
-         
+
+        $scope.slides = [];
+        $scope.activeImage = 0;
+        var c = 0;
+        $scope.addSlide = function(url){
+            $scope.slides.push({
+                image: url,
+                id: c++
+            });
+        };
     });

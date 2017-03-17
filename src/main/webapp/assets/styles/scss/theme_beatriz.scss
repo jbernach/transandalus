@@ -47,10 +47,20 @@ h3{
 }
 
 p{
-    font-size: 1.5em;
+    text-align: center;
+    font-size: 1.2em;
     color: #4d4d4d;
+
+    @media screen and (max-width: 767px){
+        font-size: 1em;
+    }
 }
 
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: hidden;
+}
 .aligned-row {
     display: flex;
     flex-flow: row wrap;
@@ -60,11 +70,47 @@ p{
     }
 }
 
+.btn{
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1em;
+    border: 3px solid transparent;
+    border-radius: 0px;
+
+    .glyphicon{
+        margin-right: 0.1em;
+    }
+}
+
+.btn-default{
+    color: $primary-color;
+    background-color: $negative-color;
+    border-color: $primary-color;
+}
+
+.btn-default:hover, .btn-default:active, .btn-default:focus{
+    color: $negative-color;
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.btn-primary{
+    color: $negative-color;
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+    color: $primary-color;
+    background-color: $negative-color;
+    border-color: $primary-color;
+}
+
 @import 'main-navbar';
 @import 'home';
 @import 'route-outline';
 @import 'footer';
-
-.angular-google-map-container {
-    height: 400px;
-}
+@import 'travelers';
+@import 'volunteers';
+@import 'province';

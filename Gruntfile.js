@@ -43,11 +43,11 @@ module.exports = function (grunt) {
             ngconstant: {
                 files: ['Gruntfile.js', 'bower.json'],
                 tasks: ['ngconstant:dev']
-            }/*,
+            },
             sass: {
                 files: ['src/main/webapp/assets/styles/scss/*.scss'],
                 tasks: ['sass']
-            }*/
+            }
         },
         autoprefixer: {
             // src and dest is configured in a subtask called "generated" by usemin
@@ -254,8 +254,13 @@ module.exports = function (grunt) {
                 },{
                     expand: true,
                     cwd: 'src/main/webapp/bower_components/angular-i18n/',
-                    src: '*.js',
+                    src: '{angular-locale_es,angular-locale_en,es,en}.js',
                     dest: '<%= yeoman.dist %>/bower_components/angular-i18n'
+                },{
+                    expand: true,
+                    cwd: 'src/main/webapp/uploaded-images',
+                    src: '**/*.{png,gif,webp,jpg,jpeg,svg}',
+                    dest: '<%= yeoman.dist %>/uploaded-images'
                 }]
             }
         },
