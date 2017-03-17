@@ -7,7 +7,7 @@
 
     <div id="title-overlay">
         <h1 translate="main.title" class="negative center-block">Bienvenidos a TransAndalus</h1>
-        <p class="negative lead text-center" translate="main.subtitle">Una ruta en bicicleta de montaña de 2000 Km por Andalucía</p>
+        <p class="negative lead" translate="main.subtitle">Una ruta en bicicleta de montaña de 2000 Km por Andalucía</p>
         <div class="row">
             <div class="visible-md-block visible-lg-block text-center">
                 <span class="text-center" ng-repeat="province in provinces track by province.id">
@@ -27,41 +27,45 @@
     </div>
 </section>
 
-<section id="ciclotourism-steps">
-    <h2 translate="main.ciclotourism.title">Cicloturismo en un click</h2>
-    <div class="row">
-    	<div class="col-sm-4">
-    		<div class="text-center">
-                <img src="assets/images/map.svg" />
-    			<h3 translate="main.ciclotourism.step1.title">Planea la ruta</h3>
-    			<p translate="main.ciclotourism.step1.body">
-    				Elige destino acorde con tu nivel físico, el tiempo que tengas y tus apetencias: barrancos o valles, playa o montaña, ciudades o pueblos, ¡hay de todo y para todos!
-    			</p>
-    		</div>
-    	</div>
-    	<div class="col-sm-4">
-    		<div class="text-center">
-                <img src="assets/images/phone.svg" />
-    			<h3 translate="main.ciclotourism.step2.title">Descarga el track</h3>
-    			<p translate="main.ciclotourism.step2.body">
-    				Accede a tus tramos seleccionados en tu sección personal "Mi aventura" y bájate los tracks de cada ruta gratis. También puedes guardar tramos para la próxima en "Mis favoritos".
-    			</p>
-    		</div>
-    	</div>
-    	<div class="col-sm-4">
-    		<div class="text-center">
-                <img src="assets/images/bike.svg" />
-    			<h3 translate="main.ciclotourism.step3.title">¡A dar pedales!</h3>
-    			<p translate="main.ciclotourism.step3.body">
-    				Accede a la ruta desde tu móvil o gps y ¡a disfrutar de la gastronomía, la gente y los paisajes de Andalucía! No olvides bajarte un mapa off-line de la zona.
-    			</p>
-    		</div>
-    	</div>
-    </div>
-</section>
+<div class="container">
+    <section id="ciclotourism-steps">
+        <h2 translate="main.ciclotourism.title">Cicloturismo en un click</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="text-center">
+                    <img src="assets/images/map.svg" />
+                    <h3 translate="main.ciclotourism.step1.title">Planea la ruta</h3>
+                    <p translate="main.ciclotourism.step1.body">
+                        Elige destino acorde con tu nivel físico, el tiempo que tengas y tus apetencias: barrancos o valles, playa o montaña, ciudades o pueblos, ¡hay de todo y para todos!
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="text-center">
+                    <img src="assets/images/phone.svg" />
+                    <h3 translate="main.ciclotourism.step2.title">Descarga el track</h3>
+                    <p translate="main.ciclotourism.step2.body">
+                        Accede a tus tramos seleccionados en tu sección personal "Mi aventura" y bájate los tracks de cada ruta gratis. También puedes guardar tramos para la próxima en "Mis favoritos".
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="text-center">
+                    <img src="assets/images/bike.svg" />
+                    <h3 translate="main.ciclotourism.step3.title">¡A dar pedales!</h3>
+                    <p translate="main.ciclotourism.step3.body">
+                        Accede a la ruta desde tu móvil o gps y ¡a disfrutar de la gastronomía, la gente y los paisajes de Andalucía! No olvides bajarte un mapa off-line de la zona.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="container-fluid">
+    <ta-route-outline></ta-route-outline>
+</div>
+<div class="container">
+    <ta-travelers></ta-travelers>
 
-<ta-route-outline></ta-route-outline>
-
-<ta-travelers></ta-travelers>
-
-<ta-volunteers></ta-volunteers>
+    <ta-volunteers></ta-volunteers>
+</div>

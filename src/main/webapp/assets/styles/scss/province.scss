@@ -1,0 +1,107 @@
+.province{
+    @media screen and (max-width: 767px){
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .carousel{
+        @media screen and (min-width: 768px){
+            min-height: 500px;
+            max-height: 770px;
+        }
+
+        @media screen and (max-width: 767px){
+            height: 250px;
+        }
+
+        div[uib-slide]{
+            img{
+                @media screen and (min-width: 768px){
+                    height: initial;
+                    min-height: 500px;
+                    max-height: 770px;
+                }
+
+                @media screen and (max-width: 767px){
+                    height: 250px;
+                }
+
+                object-fit: cover;
+                width: 100%;
+            }
+
+        }
+    }
+
+    #title-overlay{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        h2{
+            margin-top: 85%;
+        }
+    }
+
+    h2{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .description{
+        @media screen and (min-width: 768px){
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+
+        @media screen and (max-width: 767px){
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+    }
+
+    .map{
+        margin-top: 4em;
+        margin-bottom: 4em;
+
+        .angular-google-map-container {
+            height: 400px;
+        }
+    }
+
+    .buttons{
+        text-align: center;
+    }
+
+    .stages{
+        margin-top: 1em;
+
+        @media screen and (max-width: 767px){
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+
+        .list-group-item{
+            background-color: $primary-color;
+            border: 1px solid $negative-color;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1.3em;
+            a{
+                color: $negative-color;
+                text-transform: uppercase;
+            }
+        }
+
+        .list-group-item:last-child {
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+    }
+}

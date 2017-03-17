@@ -1,32 +1,46 @@
-<article style="background-image:{{province.imageUrl}}">
-    <header>
-        <h1>{{province.name}}</h1>
-    </header>
-    <section>
-        <span class="form-control-static" marked="province.description"></span>
-    </section>
-    <section class="well">
-        <div ng-if="province.track.contentType">
-            <div class="panel">
+<article class="province">
+    <div uib-carousel active="activeImage" no-wrap="false" interval="4000">
+        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+            <img ng-src="{{slide.image}}">
+        </div>
+    </div>
+
+    <div id="title-overlay" class="negative center-block">
+        <h2>{{province.name}}</h2>
+    </div>
+
+    <div class="container">
+        <h2>{{province.title}}</h2>
+
+        <section class="description" marked="province.description">
+        </section>
+
+        <section class="map">
+            <div ng-if="province.track.contentType">
                 <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
                     <ui-gmap-layer type="KmlLayer" options="map.kmlLayerOptions"></ui-gmap-layer>
                 </ui-gmap-google-map>
             </div>
-        
-            <p>
-                <a href="{{map.kmlLayerOptions.url}}" download="{{province.track.name}}" target="_blank" translate="transandalus.province.downloadTrack" class="btn btn-default">Download track</a>
-            </p>
-        </div>
-    </section>
-    <section class="panel panel-default">
-        <header class="panel-heading" translate="transandalus.province.stages">Stages</header>
-        
+        </section>
+
+        <section class="buttons">
+            <a href="{{map.kmlLayerOptions.url}}" download="{{province.track.name}}" target="_blank" class="btn btn-default">
+                <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                <span translate="transandalus.province.downloadTrack">Download track</span>
+            </a>
+        </section>
+
+        <section class="stages">
+            <h3 translate="transandalus.province.stages">Stages</h3>
+
             <ul class="list-group">
                 <li ng-repeat="stage in stages track by stage.id" class="list-group-item">
                     <a ui-sref="stage.detail({id:stage.id})">{{stage.name}}</a>
                 </li>
-                  
+
             </ul>
-        
-    </section>
+
+        </section>
+    </div>
+
 </article>
