@@ -2,6 +2,7 @@
 $font-stack: Raleway, Helvetica, sans-serif;
 $primary-color: #317f6d;
 $negative-color: white;
+$text-color: #4d4d4d;
 
 .negative{
     color: $negative-color !important;
@@ -49,7 +50,7 @@ h3{
 p{
     text-align: center;
     font-size: 1.2em;
-    color: #4d4d4d;
+    color: $text-color;
 
     @media screen and (max-width: 767px){
         font-size: 1em;
@@ -74,7 +75,7 @@ p{
     font-size: 1.5em;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 1em;
+    padding: 0.5em;
     border: 3px solid transparent;
     border-radius: 0px;
 
