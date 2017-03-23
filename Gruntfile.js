@@ -316,7 +316,7 @@ module.exports = function (grunt) {
         'clean:server',
         'wiredep',
         'ngconstant:dev',
-        //'sass',
+        'sass',
         'browserSync',
         'watch'
     ]);

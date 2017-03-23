@@ -31,16 +31,23 @@
         </section>
 
         <section class="stages">
-            <h3 translate="transandalus.province.stages">Stages</h3>
+            <h2 translate="transandalus.province.stages">Stages</h2>
 
-            <ul class="list-group">
-                <li ng-repeat="stage in stages track by stage.id" class="list-group-item">
+            <ul>
+                <li ng-repeat="stage in stages track by stage.id">
                     <a ui-sref="stage.detail({id:stage.id})">{{stage.name}}</a>
                 </li>
-
             </ul>
-
         </section>
+
+        <stageskk province="province.id" stages="stages"></stageskk>
+    </div>
+
+    <div class="container-fluid">
+        <ta-route-outline></ta-route-outline>
+    </div>
+    <div class="container">
+        <ta-travelers></ta-travelers>
     </div>
 
 </article>
