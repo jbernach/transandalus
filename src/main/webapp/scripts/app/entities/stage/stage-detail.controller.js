@@ -1,19 +1,8 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('StageDetailController', function ($scope, $rootScope, $stateParams, DataUtils, entity, Stage, API_URL) {
+    .controller('StageDetailController', function ($scope, entity, API_URL) {
         $scope.stage = entity;
-        $scope.load = function (id) {
-            Stage.get({id: id}, function(result) {
-                $scope.stage = result;
-            });
-        };
-        var unsubscribe = $rootScope.$on('transandalus:stageUpdate', function(event, result) {
-            $scope.stage = result;
-        });
-        $scope.$on('$destroy', unsubscribe);
-
-        $scope.byteSize = DataUtils.byteSize;
 
         $scope.map = {
             //Cordoba
@@ -22,7 +11,7 @@ angular.module('transandalus')
               longitude: -4.778564
             },
             zoom:7,
-            options: {scrollwheel:false}
+            options: {scrollwheel: false}
         };
 
         if($scope.stage.$promise){
@@ -31,6 +20,17 @@ angular.module('transandalus')
                     var url = API_URL + '/tracks/'+el.track.id;
                     $scope.map.kmlLayerOptions = {'url':url};
                 }
+                $scope.addSlide(el.imageUrl);
             });
         }
+
+        $scope.slides = [];
+        $scope.activeImage = 0;
+        var c = 0;
+        $scope.addSlide = function(url){
+            $scope.slides.push({
+                image: url,
+                id: c++
+            });
+        };
     });

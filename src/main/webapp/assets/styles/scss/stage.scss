@@ -1,4 +1,4 @@
-.province{
+.stage{
     @media screen and (max-width: 767px){
         margin-left: -15px;
         margin-right: -15px;
@@ -70,31 +70,59 @@
         text-align: center;
     }
 
-    .stages{
-        margin-top: 1em;
+    .stage-nav{
+        margin: 2em;
+
+        .left{
+            text-align: left;
+        }
+
+        .right{
+            text-align: right;
+        }
+
+        a{
+            color: $primary-color;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 2em;
+        }
+    }
+
+    .stage-data{
+        margin-top: 2em;
         margin-bottom: 2em;
 
-        h2{
-            margin-bottom: 0.3em;
-        }
-
         @media screen and (max-width: 767px){
-            margin-left: 2em;
-            margin-right: 2em;
+            margin-left: 3em;
+            margin-right: 3em;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0px;
-
-            li{
-                font-size: 1.2em;
-                line-height: 2em;
-
-                a{
-                    color: $text-color;
-                }
+        .col-centered{
+            @media screen and (max-width: 767px){
+                display: block;
             }
+        }
+
+        .data-item{
+            margin-top: 1.5em;
+
+            .data-title{
+                text-align: center;
+                font-size: 1.2em;
+                color: $text-color;
+                border-bottom: solid $primary-color 1px;
+                margin-bottom: 1em;
+                padding-bottom: 1em;
+            }
+
+            .data-value{
+                text-align: center;
+                font-size: 2.2em;
+                font-weight: 900;
+                color: lighten($text-color, 10%);
+            }
+
         }
     }
 }
