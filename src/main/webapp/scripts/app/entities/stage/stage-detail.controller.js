@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('StageDetailController', function ($scope, entity, API_URL) {
+    .controller('StageDetailController', function ($document, $scope, entity, API_URL) {
         $scope.stage = entity;
-
+        $document.scrollTop(0, 0);
         $scope.map = {
             //Cordoba
             center: {

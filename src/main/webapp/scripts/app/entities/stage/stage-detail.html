@@ -1,4 +1,4 @@
-<article class="stage">
+<article class="stage" ng-cloak="">
     <div uib-carousel active="activeImage" no-wrap="false" interval="4000">
         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
             <img ng-src="{{slide.image}}">
