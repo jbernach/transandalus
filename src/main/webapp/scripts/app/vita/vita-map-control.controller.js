@@ -22,11 +22,11 @@ angular.module('transandalus')
         $scope.$watch('showLinks', function () {
             $rootScope.$broadcast('showLinks:changed', $scope.showLinks);
         });
-       
+
         $timeout(function() {
             $('#vita-search-placeholder').css('display', 'none');
             $('#vita-search-container').append($('#vita-search-box'));
             $('#vita-search-box').css({'display': 'block', 'position': 'relative', 'left': '0px'});
         });
-        
+
     });
