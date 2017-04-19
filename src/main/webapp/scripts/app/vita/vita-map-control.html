@@ -3,19 +3,41 @@
          <div class="form-group" id="vita-search-container">
              <input type="text" id="vita-search-placeholder" class="form-control" placeholder="{{'transandalus.vita.search' | translate}}"/>
          </div>
-         <div class="form-group">
-             <label class="btn btn-default"  ng-model="showMarkers" uib-btn-checkbox>
-                 {{'transandalus.vita.showMarkers' | translate}}
-             </label>
-             <label class="btn btn-default" ng-model="showServices" uib-btn-checkbox>
-                 {{'transandalus.vita.showServices' | translate}}
-             </label>
-             <label class="btn btn-default" ng-model="showAlternatives" uib-btn-checkbox>
-                 {{'transandalus.vita.showAlternatives' | translate}}
-             </label>
-             <label class="btn btn-default" ng-model="showLinks" uib-btn-checkbox>
-                 {{'transandalus.vita.showLinks' | translate}}
-             </label>
-         </div>
      </form>
+     <div class="vita-map-control-toggles-container">
+         <ul class="list-group">
+             <li class="list-group-item">
+                 <div class="material-switch pull-left">
+                     <input id="showMarkers" name="showMarkers" type="checkbox" ng-model="showMarkers"/>
+                     <label for="showMarkers" class="label-success"></label>
+                 </div>
+                 &nbsp;
+                 <label for="showMarkers" ng-class="showMarkers?'lbl-on':'lbl-off'">{{'transandalus.vita.showMarkers' | translate}}</label>
+             </li>
+             <li class="list-group-item">
+                 <div class="material-switch pull-left">
+                     <input id="showServices" name="showServices" type="checkbox" ng-model="showServices"/>
+                     <label for="showServices" class="label-success"></label>
+                 </div>
+                 &nbsp;
+                 <label for="showServices" ng-class="showServices?'lbl-on':'lbl-off'">{{'transandalus.vita.showServices' | translate}}</label>
+             </li>
+             <li class="list-group-item">
+                 <div class="material-switch pull-left">
+                     <input id="showAlternatives" name="showAlternatives" type="checkbox" ng-model="showAlternatives"/>
+                     <label for="showAlternatives" class="label-success"></label>
+                 </div>
+                 &nbsp;
+                 <label for="showAlternatives" ng-class="showAlternatives?'lbl-on':'lbl-off'">{{'transandalus.vita.showAlternatives' | translate}}</label>
+             </li>
+             <li class="list-group-item">
+                 <div class="material-switch pull-left">
+                     <input id="showLinks" name="showLinks" type="checkbox" ng-model="showLinks"/>
+                     <label for="showLinks" class="label-success"></label>
+                 </div>
+                 &nbsp;
+                 <label for="showLinks" ng-class="showLinks?'lbl-on':'lbl-off'">{{'transandalus.vita.showLinks' | translate}}</label>
+             </li>
+         </ul>
+     </div>
 </div>

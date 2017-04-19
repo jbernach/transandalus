@@ -4,10 +4,10 @@
             "title": "Interactive visor",
             "showMenu": "Show menu",
             "search": "Search",
-            "showMarkers": "Show markers",
-            "showServices": "Show services",
-            "showAlternatives": "Show alternatives",
-            "showLinks": "Show link stages"
+            "showMarkers": "Markers",
+            "showServices": "Services",
+            "showAlternatives": "Alternatives",
+            "showLinks": "Link stages"
         }
     }
 }
