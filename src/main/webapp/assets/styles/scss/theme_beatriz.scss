@@ -48,7 +48,7 @@ h3{
 }
 
 p{
-    text-align: center;
+    text-align: justify;
     font-size: 1.2em;
     color: $text-color;
 
@@ -69,6 +69,18 @@ p{
     &::before {
         display: block;
     }
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }
 
 .btn{
@@ -115,3 +127,5 @@ p{
 @import 'travelers';
 @import 'volunteers';
 @import 'province';
+@import 'stage';
+@import 'vita';

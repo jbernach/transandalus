@@ -1,26 +1,20 @@
 {
     "transandalus": {
         "stage" : {
-            "name": "Name",
-            "description": "Description",
+            "detail":{
+                "title": "TransAndalus - Stage"
+            },
+            "downloadTrack": "Download track",
             "distanceTotal": "Total distance",
-            "distanceRoad": "Road distance",
+            "distanceRoad": "Road",
             "estimatedTime": "Estimated time",
             "elevation": "Elevation",
             "difficultyPhys": "Physical difficulty",
             "difficultyTech": "Tech difficulty",
-            "galleryURL": "Photo gallery",
-            "province": "Province",
-            "nextStage": "Next Stage",
-            "nextAltStage": "Alternative",
-            "prevStage": "Previous Stage",
-            "prevAltStage": "Alternative",
-            "image": "Image",
-            "imageURL": "Image URL",
-            "track": "Track (kml)",
-            "downloadTrack": "Download track",
-            "stageType": "Type",
-            "startPlace": "Start place"
+            "nextStage": "Next stage",
+            "nextAltStage": "Next stage alternative",
+            "prevStage": "Previous stage",
+            "prevAltStage": "Previous stage alternative"
         }
     }
 }

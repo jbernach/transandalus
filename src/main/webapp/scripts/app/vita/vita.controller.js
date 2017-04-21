@@ -17,12 +17,12 @@ angular.module('transandalus')
                 scrollwheel:false,
                 fullscreenControl: true,
                 mapTypeControlOptions:{
-                    position: 3
+                    position: 6
                 }
             }
         };
 
-        $scope.searchbox = { 
+        $scope.searchbox = {
           template:'searchbox.tpl.html',
           events:{
             places_changed: function (searchBox) {
@@ -42,7 +42,7 @@ angular.module('transandalus')
                     },
                     zoom: 10
                 };
-                
+
                 // refresh the marker
                 $scope.marker = {
                     options:{ draggable:false },
@@ -84,7 +84,7 @@ angular.module('transandalus')
                 }
             };
         }
-        
+
         $scope.updateLayers();
 
         // Listen to changes in vita-map-control.controller on these variables

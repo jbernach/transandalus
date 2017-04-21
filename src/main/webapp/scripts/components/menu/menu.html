@@ -2,7 +2,10 @@
     <a ng-if="menuItem.url.startsWith('state:')" ui-sref="{{menuItem.url.substring('state:'.length)}}" href="#" data-toggle="collapse" data-target=".navbar-collapse.in">
         <span>{{menuItem.text}}</span>
     </a>
-    <a ng-if="!menuItem.url.startsWith('state:')" href="{{menuItem.url}}" data-toggle="collapse" data-target=".navbar-collapse.in">
+    <a ng-if="menuItem.url.startsWith('_blank:')" href="{{menuItem.url.substring('_blank:'.length)}}" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in">
+        <span>{{menuItem.text}}</span>
+    </a>
+    <a ng-if="!menuItem.url.startsWith('state:') && !menuItem.url.startsWith('_blank:')" href="{{menuItem.url}}" data-toggle="collapse" data-target=".navbar-collapse.in">
         <span>{{menuItem.text}}</span>
     </a>
 </li>

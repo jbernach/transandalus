@@ -1,0 +1,41 @@
+.vita-map-control{
+    padding: 60px 10px 10px 20px;
+
+    .btn{
+        display: block;
+        width: 300px;
+        margin-bottom: 5px;
+    }
+}
+
+#vita-search-box{
+    @media screen and (min-width: 768px){
+        min-width: 400px;
+    }
+
+    @media screen and (max-width: 767px){
+        min-width: 100px;
+    }
+
+}
+
+.vita-map-control-toggles-container{
+    position: absolute;
+
+    .list-group-item{
+        font-size: 1.2em;
+    }
+}
+
+.lbl-on{
+    font-weight: bold;
+    color: $text-color;
+    cursor: pointer;
+}
+
+.lbl-off{
+    font-weight: normal;
+    color: $text-color;
+    cursor: pointer;
+}
+
