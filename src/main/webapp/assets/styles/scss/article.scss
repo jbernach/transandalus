@@ -12,8 +12,33 @@
         font-weight: 600;
     }
 
-    .row div{
-        padding: 20px;
-        text-align: justify;
+    .row{
+        div{
+            margin: 20px 0px 20px 0px;
+            padding: 0px 40px 0px 20px;
+            text-align: justify;
+        }
+
+        @media screen and (min-width: 768px){
+            div:first-child::after{
+                content: "\25cf";
+                position: absolute;
+                right: -7px;
+                font-size: 50px;
+                top: -20px;
+                color: $primary-color;
+                z-index: 1000;
+            }
+
+            div:nth-child(2)::before{
+                content: "";
+                border-left: 2px solid $primary-color;
+                position: absolute;
+                left: -10px;
+                top: 32px;
+                height: 150%;
+            }
+        }
+
     }
 }
