@@ -1,0 +1,75 @@
+.article{
+    padding: 50px 0px 50px 0px;
+
+
+    .background{
+        position: relative;
+        width: 100%;
+        z-index: -1;
+        top: -55px;
+
+        img{
+            @media screen and (min-width: 768px){
+                height: initial;
+                min-height: 500px;
+                max-height: 770px;
+            }
+
+            @media screen and (max-width: 767px){
+                height: 500px;
+            }
+
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    .title-overlay{
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+}
+
+.the-project{
+    img{
+        width: 100%;
+    }
+
+    h4{
+        text-align: right;
+        font-weight: 600;
+    }
+
+    .row{
+        div{
+            margin: 20px 0px 20px 0px;
+            padding: 0px 40px 0px 20px;
+            text-align: justify;
+        }
+
+        @media screen and (min-width: 768px){
+            div:first-child::after{
+                content: "\25cf";
+                position: absolute;
+                right: -7px;
+                font-size: 50px;
+                top: -20px;
+                color: $primary-color;
+                z-index: 1000;
+            }
+
+            div:nth-child(2)::before{
+                content: "";
+                border-left: 2px solid $primary-color;
+                position: absolute;
+                left: -10px;
+                top: 10px;
+                height: 150%;
+            }
+        }
+
+    }
+}
