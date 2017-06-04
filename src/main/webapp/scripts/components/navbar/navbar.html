@@ -54,7 +54,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li active-menu="{{language}}" ng-repeat="language in languages">
-                            <a href="" ng-click="changeLanguage(language)" data-toggle="collapse" data-target=".navbar-collapse.in">{{language | findLanguageFromKey}}</a>
+                            <a href="" ng-click="changeLanguage(language)" data-toggle="collapse" data-target=".navbar-collapse.in">{{language | findLanguageFromKey}}<b class="glyphicon glyphicon-ok" ng-if="currentLang == language" style="margin-left: 20px"></b></a>
                         </li>
                     </ul>
                 </li>

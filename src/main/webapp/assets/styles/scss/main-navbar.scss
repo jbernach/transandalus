@@ -6,6 +6,10 @@
     nav{
         @media screen and (min-width: 768px){
             position: absolute !important;
+
+            .navbar-right .dropdown-menu{
+                right: -5px;
+            }
         }
 
         @media screen and (max-width: 767px){
@@ -61,6 +65,7 @@
 
         .dropdown-menu{
             background-color: transparent;
+            //background: $primary-color;
         }
     }
 }
