@@ -6,9 +6,11 @@ angular.module('transandalus')
 
         $scope.changeLanguage = function (languageKey) {
             $scope.currentLang = languageKey;
-            $translate.use(languageKey);
-            tmhDynamicLocale.set(languageKey);
-            $state.reload();
+            $translate.use(languageKey).then(function () {
+                tmhDynamicLocale.set(languageKey).then(function () {
+                    $state.reload();
+                });
+            });
         };
 
         Language.getAll().then(function (languages) {
