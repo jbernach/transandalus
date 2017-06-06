@@ -20,6 +20,7 @@
         left: 0;
         z-index: 200;
         width: 100%;
+        border: 0;
 
         .navbar-toggle{
             z-index: 1;
@@ -46,6 +47,7 @@
 
         a{
             font-size: 1em;
+            font-weight: bold;
             text-transform: uppercase;
             color: $negative-color !important;
             background-color: transparent !important;
