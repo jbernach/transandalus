@@ -29,7 +29,7 @@
         .navbar-collapse {
             padding-left: 20px !important;
             padding-right: 20px !important;
-   
+
             @media screen and (max-width: 767px){
                 position: absolute;
                 right: 0px;
@@ -69,4 +69,32 @@
             //background: $primary-color;
         }
     }
+}
+
+.navbar-toggle.collapsed {
+    .top-bar {
+        transform: rotate(0);
+    }
+    .middle-bar {
+        opacity: 1;
+    }
+    .bottom-bar {
+        transform: rotate(0);
+    }
+}
+
+.icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+}
+.top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+.middle-bar {
+    opacity: 0;
+}
+.bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
 }
