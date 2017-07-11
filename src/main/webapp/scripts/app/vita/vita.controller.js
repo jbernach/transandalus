@@ -74,15 +74,15 @@ angular.module('transandalus')
         $scope.updateLayers = function(){
             $scope.kmlLayers = {
                 track: {
-                    url: API_URL + '/layer/track?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks,
+                    url: API_URL + '/layer/track?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks + '&cacheBuster=' + (new Date()).getTime(),
                     preserveViewport: true
                 },
                 markers: {
-                    url: API_URL + '/layer/marcadores?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks,
+                    url: API_URL + '/layer/marcadores?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks + '&cacheBuster=' + (new Date()).getTime(),
                     preserveViewport: true
                 },
                 services: {
-                    url: API_URL + '/layer/servicios?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks,
+                    url: API_URL + '/layer/servicios?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks + '&cacheBuster=' + (new Date()).getTime(),
                     preserveViewport: true
                 }
             };
