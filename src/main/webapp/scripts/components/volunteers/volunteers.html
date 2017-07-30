@@ -1,5 +1,5 @@
 <section id="volunteers">
-    <h2 translate="global.volunteers.title">Biciclistas generosos</h2>
+    <h2 translate="global.volunteers.title">Who has made it possible</h2>
     <p translate="global.volunteers.text"></p>
     <div class="row aligned-row">
         <div class="col-sm-3 col-md-4 col-lg-2 center-block" ng-repeat="person in visibleVolunteers track by $index">
@@ -9,6 +9,10 @@
                 <h4><small>{{person.text}}</small></h4>
             </div>
         </div>
-
     </div>
+    <section class="buttons">
+        <a ng-href="mailto:asociaciontransandalus@gmail.com?subject={{'global.volunteers.joinus' | translate}}" target="_blank" class="btn btn-primary">
+            <span translate="global.volunteers.joinus">I want to help</span>
+        </a>
+    </section>
 </section>

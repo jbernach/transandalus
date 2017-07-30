@@ -121,6 +121,10 @@ p{
     border-color: $primary-color;
 }
 
+.buttons{
+    text-align: center;
+}
+
 @import 'main-navbar';
 @import 'home';
 @import 'route-outline';
