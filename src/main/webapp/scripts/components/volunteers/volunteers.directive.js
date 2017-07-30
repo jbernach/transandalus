@@ -19,6 +19,8 @@ angular.module('transandalus')
                     return Volunteer.query({page: 0, size: 200, sort: ['id'], menu: $scope.idMenu}, function(result, headers) {
                         $scope.volunteers = result;
                         $scope.visibleVolunteers = new Array(Math.min($scope.maxVisibleVolunteers, $scope.volunteers.length));
+                        // Give all the oportunity to be on front initially
+                        $scope.startFrom = Math.floor(Math.random() * $scope.volunteers.length);
                     });
                 };
 
@@ -43,7 +45,7 @@ angular.module('transandalus')
                 $scope.loadVolunteers().$promise.then(function() {
                     $scope.selectVisibleVolunteers();
                     if($scope.maxVisibleVolunteers < $scope.volunteers.length){
-                        $interval(function(){ $scope.selectVisibleVolunteers();}, 10000);
+                        $interval(function(){ $scope.selectVisibleVolunteers();}, 10000); // change volunteers every 10 seconds
                     }
                 });
 
