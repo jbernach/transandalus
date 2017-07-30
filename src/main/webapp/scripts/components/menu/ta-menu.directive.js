@@ -13,7 +13,7 @@ angular.module('transandalus')
                 //console.debug("Menu de id " + $scope.idMenu);
                 $scope.menuItems = [];
                 $scope.loadMenuItems = function(){
-            		MenuItem.query({page: 0, size: 20, sort: ['order'], menu: $scope.idMenu}, function(result, headers) {
+            		MenuItem.query({page: 0, size: 50, sort: ['order'], menu: $scope.idMenu}, function(result, headers) {
                 		$scope.menuItems = result;
             		});
         		}
