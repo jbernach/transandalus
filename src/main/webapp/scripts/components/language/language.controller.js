@@ -1,10 +1,16 @@
 'use strict';
 
 angular.module('transandalus')
-    .controller('LanguageController', function ($scope, $translate, Language, tmhDynamicLocale) {
+    .controller('LanguageController', function ($scope, $translate, $state, Language, tmhDynamicLocale) {
+        $scope.currentLang = $translate.use();
+
         $scope.changeLanguage = function (languageKey) {
-            $translate.use(languageKey);
-            tmhDynamicLocale.set(languageKey);
+            $scope.currentLang = languageKey;
+            $translate.use(languageKey).then(function () {
+                tmhDynamicLocale.set(languageKey).then(function () {
+                    $state.reload();
+                });
+            });
         };
 
         Language.getAll().then(function (languages) {

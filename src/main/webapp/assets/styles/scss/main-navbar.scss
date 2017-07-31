@@ -6,6 +6,10 @@
     nav{
         @media screen and (min-width: 768px){
             position: absolute !important;
+
+            .navbar-right .dropdown-menu{
+                right: -5px;
+            }
         }
 
         @media screen and (max-width: 767px){
@@ -16,6 +20,7 @@
         left: 0;
         z-index: 200;
         width: 100%;
+        border: 0;
 
         .navbar-toggle{
             z-index: 1;
@@ -29,12 +34,11 @@
                 position: absolute;
                 right: 0px;
                 top: 0px;
-                padding-top: 34px;
                 padding-right: 40px;
                 background: $primary-color;
                 text-align: left;
                 width: 225px;
-                max-height: 500px !important;
+                max-height: 260px !important;
                 box-shadow: none;
                 z-index: 0;
             }
@@ -42,6 +46,7 @@
 
         a{
             font-size: 1em;
+            font-weight: bold;
             text-transform: uppercase;
             color: $negative-color !important;
             background-color: transparent !important;
@@ -61,6 +66,35 @@
 
         .dropdown-menu{
             background-color: transparent;
+            //background: $primary-color;
         }
     }
+}
+
+.navbar-toggle.collapsed {
+    .top-bar {
+        transform: rotate(0);
+    }
+    .middle-bar {
+        opacity: 1;
+    }
+    .bottom-bar {
+        transform: rotate(0);
+    }
+}
+
+.icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+}
+.top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+.middle-bar {
+    opacity: 0;
+}
+.bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
 }

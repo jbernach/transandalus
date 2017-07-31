@@ -88,6 +88,7 @@ p{
     font-weight: 700;
     text-transform: uppercase;
     padding: 0.5em;
+    margin: 0.5em;
     border: 3px solid transparent;
     border-radius: 0px;
 
@@ -118,6 +119,14 @@ p{
     color: $primary-color;
     background-color: $negative-color;
     border-color: $primary-color;
+}
+
+.buttons{
+    text-align: center;
+}
+
+.last{
+    padding-bottom: 50px;
 }
 
 @import 'main-navbar';

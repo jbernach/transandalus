@@ -24,7 +24,11 @@
         </section>
 
         <section class="buttons">
-            <a href="{{map.kmlLayerOptions.url}}" download="{{province.track.name}}" target="_blank" class="btn btn-default">
+            <a ng-if="province.guideUrl" href="{{province.guideUrl}}" target="_blank" class="btn btn-default">
+                <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                <span translate="transandalus.province.downloadGuide">Download guide</span>
+            </a>
+            <a ng-if="province.track.contentType" href="{{map.kmlLayerOptions.url}}" download="{{province.track.name}}" target="_blank" class="btn btn-default">
                 <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
                 <span translate="transandalus.province.downloadTrack">Download track</span>
             </a>

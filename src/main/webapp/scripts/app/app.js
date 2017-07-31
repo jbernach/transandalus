@@ -57,7 +57,9 @@ angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
         });
 
         // if the current translation changes, update the window title
-        $rootScope.$on('$translateChangeSuccess', function() { updateTitle(); });
+        $rootScope.$on('$translateChangeSuccess', function() {
+            updateTitle();
+        });
 
 
         $rootScope.back = function() {
