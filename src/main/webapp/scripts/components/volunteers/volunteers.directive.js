@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('transandalus')
-    .directive('taVolunteers', function($state, $timeout, $interval, $document, Volunteer) {
+    .directive('taVolunteers', function($state, $timeout, $interval, Volunteer) {
         return {
             restrict: 'E',
             templateUrl: 'scripts/components/volunteers/volunteers.html',
