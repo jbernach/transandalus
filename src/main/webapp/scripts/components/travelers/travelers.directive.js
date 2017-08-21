@@ -45,7 +45,7 @@ angular.module('transandalus')
                 $scope.loadTravelers().$promise.then(function() {
                     $scope.selectVisibleTravelers();
                     if($scope.maxVisibleTravelers < $scope.travelers.length){
-                        $interval(function(){ $scope.selectVisibleTravelers();}, 10000); // change travelers every 10 seconds
+                        $interval(function(){ $scope.selectVisibleTravelers();}, 20000); // change travelers every 20 seconds
                     }
                 });
 
