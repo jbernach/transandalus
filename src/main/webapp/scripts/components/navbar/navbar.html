@@ -12,7 +12,6 @@
             <ul class="nav navbar-nav">
                 <li ui-sref-active="active">
                     <a ui-sref="home" data-toggle="collapse" data-target=".navbar-collapse.in">
-                        <span class="glyphicon glyphicon-home"></span>
                         <span class="hidden-sm" translate="global.menu.home">Home</span>
                     </a>
                 </li>
@@ -46,15 +45,16 @@
 
                 <li ui-sref-active="active" class="dropdown pointer" ng-controller="LanguageController">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <img src="assets/images/{{currentLang}}.png" height="20" class="flag" />
                         <span>
-                            <span class="glyphicon glyphicon-flag"></span>
                             <span class="hidden-sm" translate="global.menu.language">Language</span>
                             <b class="caret"></b>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
                         <li active-menu="{{language}}" ng-repeat="language in languages">
-                            <a href="" ng-click="changeLanguage(language)" data-toggle="collapse" data-target=".navbar-collapse.in">{{language | findLanguageFromKey}}<b class="glyphicon glyphicon-ok" ng-if="currentLang == language" style="margin-left: 20px"></b></a>
+                            <img src="assets/images/{{language}}.png" height="20" class="flag"/>
+                            <a href="" ng-click="changeLanguage(language)" data-toggle="collapse" data-target=".navbar-collapse.in">{{language | findLanguageFromKey}}</a>
                         </li>
                     </ul>
                 </li>

@@ -7,8 +7,11 @@
         @media screen and (min-width: 768px){
             position: absolute !important;
 
+            background: rgba(255,255,255,0.5);
+            height: 60px;
+
             .navbar-right .dropdown-menu{
-                right: -5px;
+                left: 50px;
             }
         }
 
@@ -21,6 +24,7 @@
         z-index: 200;
         width: 100%;
         border: 0;
+        border-radius: 0;
 
         .navbar-toggle{
             z-index: 1;
@@ -38,35 +42,69 @@
                 background: $primary-color;
                 text-align: left;
                 width: 225px;
-                max-height: 260px !important;
+                max-height: 269px !important;
                 box-shadow: none;
                 z-index: 0;
             }
         }
 
         a{
-            font-size: 1em;
+            font-size: 1.3em;
             font-weight: bold;
             text-transform: uppercase;
-            color: $negative-color !important;
+            color: $primary-color !important;
             background-color: transparent !important;
-            text-shadow: 1px 1px black;
-        }
-
-        a:hover{
-            @media screen and (min-width: 768px){
-                text-decoration: underline !important;
-            }
 
             @media screen and (max-width: 767px){
-                text-decoration: underline !important;
                 color: $negative-color !important;
+            }
+
+        }
+
+        a:hover > span{
+            border-bottom: 2px solid rgba(49, 127, 109, 0.5);
+
+            @media screen and (max-width: 767px){
+                border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .active a > span{
+            border-bottom: 2px solid $primary-color;
+
+            @media screen and (max-width: 767px){
+                border-bottom: 2px solid $negative-color;
             }
         }
 
         .dropdown-menu{
-            background-color: transparent;
-            //background: $primary-color;
+            background: $primary-color;
+
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+
+            @media screen and (max-width: 767px) {
+                background-color: transparent;
+                margin-left: 14px;
+            }
+
+            a{
+                display: inline-block;
+                padding-left: 0px;
+                padding-right: 0px;
+                padding-bottom: 2px;
+                margin-bottom: 10px;
+                border-bottom: 2px solid transparent;
+                color: $negative-color !important;
+
+                @media screen and (max-width: 767px) {
+                    margin-bottom: 5px;
+                }
+            }
+
+            a:hover{
+                border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            }
         }
     }
 }
@@ -97,4 +135,12 @@
 .bottom-bar {
     transform: rotate(-45deg);
     transform-origin: 10% 90%;
+}
+
+.flag{
+    clip-path: circle(10px at center);
+    @media screen and (min-width: 768px) {
+        margin-left: 10px;
+    }
+    margin-right: 5px;
 }
