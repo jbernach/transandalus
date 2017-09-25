@@ -26,3 +26,13 @@
         }
     }
 }
+
+.donate-button, .donate-button:active, .donate-button:hover, .donate-button:focus{
+    padding-top: 25px;
+    @media screen and (max-width: 767px){
+        padding-bottom: 25px;
+    }
+    outline: 0;
+    border: none;
+    -moz-outline-style: none
+}

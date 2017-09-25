@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('transandalus')
-    .directive('taVolunteers', function($state, $timeout, $interval, Volunteer) {
+    .directive('taVolunteers', function($state, $timeout, $interval, Volunteer, $uibModal) {
         return {
             restrict: 'E',
             templateUrl: 'scripts/components/volunteers/volunteers.html',
@@ -49,6 +49,23 @@ angular.module('transandalus')
                     }
                 });
 
+                $scope.openModal = function(){
+                    $scope.modalInstance = $uibModal.open({
+                        ariaLabelledBy: 'modal-title',
+                        ariaDescribedBy: 'modal-body',
+                        templateUrl: 'help-modal.html',
+                        size: 'm',
+                        controller: 'VolunteerModalController'
+                    });
+                }
+
             }]
+        };
+    });
+
+angular.module('transandalus')
+    .controller('VolunteerModalController', function($scope, $uibModalInstance) {
+        $scope.closeModal = function() {
+            $uibModalInstance.dismiss('cancel');
         };
     });
