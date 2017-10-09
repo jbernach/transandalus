@@ -1,0 +1,38 @@
+#sponsors{
+    h2{
+        margin-bottom: 0.5em;
+    }
+
+    p{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 0.5em;
+    }
+
+    .sponsor{
+        text-align: center;
+        margin: 2em 0.5em;
+        transition: all 1s ease-in;
+
+        img{
+            width:100%;
+            border-radius: 50%;
+            margin-bottom: 1em;
+
+            @media screen and (max-width: 1199px) {
+                width: 50%;
+            }
+        }
+    }
+}
+
+.donate-button, .donate-button:active, .donate-button:hover, .donate-button:focus{
+    padding-top: 25px;
+    @media screen and (max-width: 767px){
+        padding-bottom: 25px;
+    }
+    outline: 0;
+    border: none;
+    -moz-outline-style: none
+}

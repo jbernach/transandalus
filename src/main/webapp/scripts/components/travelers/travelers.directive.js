@@ -16,7 +16,7 @@ angular.module('transandalus')
                 $scope.reveal = false;
 
                 $scope.loadTravelers = function(){
-                    return Traveler.query({page: 0, size: 200, sort: ['id'], menu: $scope.idMenu}, function(result, headers) {
+                    return Traveler.query({page: 0, size: 200, sort: ['id']}, function(result, headers) {
                         $scope.travelers = result;
                         $scope.visibleTravelers = new Array(Math.min($scope.maxVisibleTravelers, $scope.travelers.length));
                         // Give all the oportunity to be on front initially

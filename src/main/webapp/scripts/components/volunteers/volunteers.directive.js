@@ -16,7 +16,7 @@ angular.module('transandalus')
                 $scope.reveal = false;
 
                 $scope.loadVolunteers = function(){
-                    return Volunteer.query({page: 0, size: 200, sort: ['id'], menu: $scope.idMenu}, function(result, headers) {
+                    return Volunteer.query({page: 0, size: 200, sort: ['id']}, function(result, headers) {
                         $scope.volunteers = result;
                         $scope.visibleVolunteers = new Array(Math.min($scope.maxVisibleVolunteers, $scope.volunteers.length));
                         // Give all the oportunity to be on front initially
