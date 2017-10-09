@@ -109,7 +109,12 @@
         "volunteers":{
             "title": "Who has made it possible",
             "text": "TransAndalus is a non-profit organization, which is born and grows thanks of its volunteers efforts. If you want to cooperate with this beautiful project you can make a donation or help us. Contact us!",
-            "joinus": "I want to help"
+            "joinus": "I want to help",
+            "anotherway": "Another  way"
+        },
+        "sponsors":{
+            "title": "Supporting TransAndalus",
+            "text": ""
         }
     },
     "entity": {

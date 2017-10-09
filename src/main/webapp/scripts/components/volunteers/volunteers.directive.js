@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('transandalus')
-    .directive('taVolunteers', function($state, $timeout, $interval, $document, Volunteer) {
+    .directive('taVolunteers', function($state, $timeout, $interval, Volunteer, $uibModal) {
         return {
             restrict: 'E',
             templateUrl: 'scripts/components/volunteers/volunteers.html',
@@ -16,7 +16,7 @@ angular.module('transandalus')
                 $scope.reveal = false;
 
                 $scope.loadVolunteers = function(){
-                    return Volunteer.query({page: 0, size: 200, sort: ['id'], menu: $scope.idMenu}, function(result, headers) {
+                    return Volunteer.query({page: 0, size: 200, sort: ['id']}, function(result, headers) {
                         $scope.volunteers = result;
                         $scope.visibleVolunteers = new Array(Math.min($scope.maxVisibleVolunteers, $scope.volunteers.length));
                         // Give all the oportunity to be on front initially
@@ -49,6 +49,23 @@ angular.module('transandalus')
                     }
                 });
 
+                $scope.openModal = function(){
+                    $scope.modalInstance = $uibModal.open({
+                        ariaLabelledBy: 'modal-title',
+                        ariaDescribedBy: 'modal-body',
+                        templateUrl: 'help-modal.html',
+                        size: 'm',
+                        controller: 'VolunteerModalController'
+                    });
+                }
+
             }]
+        };
+    });
+
+angular.module('transandalus')
+    .controller('VolunteerModalController', function($scope, $uibModalInstance) {
+        $scope.closeModal = function() {
+            $uibModalInstance.dismiss('cancel');
         };
     });

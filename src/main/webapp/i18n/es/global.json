@@ -89,7 +89,7 @@
             "title":"Trazado de la ruta"
         },
         "happytravelers": {
-            "title": "Transandaluceros felices",
+            "title": "Transandaluseros felices",
             "traveler1":{
                 "name": "Beatriz",
                 "from": "La Palma del Condado",
@@ -109,7 +109,12 @@
         "volunteers":{
             "title": "Quién lo ha hecho posible",
             "text": "La TransAndalus es una organización sin ánimo de lucro, que nace y crece gracias al esfuerzo de los voluntarios. Si quieres sumarte a este proyecto tan bonito puedes colaborar a través de donaciones o con tu tiempo. ¡Contáctanos!",
-            "joinus": "Quiero colaborar"
+            "joinus": "Quiero colaborar",
+            "anotherway": "De otra manera"
+        },
+        "sponsors":{
+            "title": "Who has made it possible",
+            "text": "Apoyan la TransAndalus"
         }
     },
     "entity": {

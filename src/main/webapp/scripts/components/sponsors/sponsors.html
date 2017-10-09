@@ -1,0 +1,13 @@
+<section id="sponsors" ng-if="sponsors.length > 0">
+    <h2 translate="global.sponsors.title">Sponsors</h2>
+    <p translate="global.sponsors.text"></p>
+    <div class="row aligned-row">
+        <div class="col-sm-3 col-md-4 col-lg-2 center-block" ng-repeat="sponsor in sponsors track by $index">
+            <div class="sponsor">
+                <a href="{{sponsor.link}}" target="_blank"><img ng-src="{{sponsor.image}}" /></a>
+                <h4><strong>{{sponsor.name}}</strong></h4>
+                <h4><small>{{sponsor.text}}</small></h4>
+            </div>
+        </div>
+    </div>
+</section>

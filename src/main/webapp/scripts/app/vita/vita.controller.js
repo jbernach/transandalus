@@ -17,10 +17,10 @@ angular.module('transandalus')
                 scrollwheel:false,
                 fullscreenControl: true,
                 mapTypeControlOptions:{
-                    position: 6
+                    position: google.maps.ControlPosition.LEFT_BOTTOM
                 },
                 fullscreenControlOptions:{
-                    position: 6
+                    position: google.maps.ControlPosition.BOTTOM_RIGHT
                 }
             }
         };

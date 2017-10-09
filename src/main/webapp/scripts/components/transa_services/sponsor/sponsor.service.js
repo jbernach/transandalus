@@ -3,17 +3,19 @@
 
     angular
         .module('transandalus')
-        .factory('Volunteer', Volunteer);
+        .factory('Sponsor', Sponsor);
 
-    Volunteer.$inject = ['$resource', 'API_URL'];
+    Sponsor.$inject = ['$resource', 'API_URL'];
 
-    function Volunteer ($resource, API_URL) {
-        return $resource(API_URL + '/volunteers/:id', {}, {
+    function Sponsor ($resource, API_URL) {
+        return $resource(API_URL + '/sponsors/:id', {}, {
             'query': { method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
+                    data.fromDate = new Date(data.fromDate);
+                    data.toDate = new Date(data.toDate);
                     return data;
                 }
             },

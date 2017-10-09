@@ -3,12 +3,12 @@
 
     angular
         .module('transandalus')
-        .factory('Volunteer', Volunteer);
+        .factory('Traveler', Traveler);
 
-    Volunteer.$inject = ['$resource', 'API_URL'];
+    Traveler.$inject = ['$resource', 'API_URL'];
 
-    function Volunteer ($resource, API_URL) {
-        return $resource(API_URL + '/volunteers/:id', {}, {
+    function Traveler ($resource, API_URL) {
+        return $resource(API_URL + '/travelers/:id', {}, {
             'query': { method: 'GET', isArray: true},
             'get': {
                 method: 'GET',

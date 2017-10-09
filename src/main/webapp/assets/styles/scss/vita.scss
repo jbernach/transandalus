@@ -1,5 +1,12 @@
 .vita-map-control{
-    padding: 60px 10px 10px 20px;
+    @media screen and (min-width: 768px){
+        padding: 85px 10px 10px 20px;
+    }
+
+    @media screen and (max-width: 767px){
+        padding: 20px 10px 10px 20px;
+    }
+
 
     .btn{
         display: block;
@@ -23,7 +30,18 @@
     position: absolute;
 
     .list-group-item{
-        font-size: 1.2em;
+
+        padding-top: 12px;
+        padding-bottom: 2px;
+
+        @media screen and (min-width: 768px){
+            font-size: 1.2em;
+        }
+
+        @media screen and (max-width: 767px){
+            font-size: 1em;
+        }
+
     }
 }
 
