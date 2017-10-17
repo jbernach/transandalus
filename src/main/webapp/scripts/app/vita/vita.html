@@ -10,7 +10,9 @@
             <ui-gmap-layer type="KmlLayer" options="kmlLayers.markers" show="showMarkers"></ui-gmap-layer>
             <ui-gmap-layer type="KmlLayer" options="kmlLayers.services" show="showServices"></ui-gmap-layer>
             <ui-gmap-map-control template="scripts/app/vita/vita-map-control.html" controller="VitaMapControlController" position="top-left"></ui-gmap-map-control>
-            <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="markerId"></ui-gmap-marker>
+            <ui-gmap-map-control template="scripts/app/vita/vita-current-location-control.html" controller="VitaCurrentLocationControlController" position="right-bottom"></ui-gmap-map-control>
+            <ui-gmap-marker coords="searchMarker.coords" options="searchMarker.options" events="searchMarker.events" idkey="searchMarkerId"></ui-gmap-marker>
+            <ui-gmap-marker coords="currentPositionMarker.coords" options="currentPositionMarker.options" idkey="currentPositionMarkerId"></ui-gmap-marker>
         </ui-gmap-google-map>
     </div>
 </section>
