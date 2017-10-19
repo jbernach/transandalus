@@ -49,12 +49,7 @@ h3{
 
 p{
     text-align: justify;
-    font-size: 1.2em;
     color: $text-color;
-
-    @media screen and (max-width: 767px){
-        font-size: 1em;
-    }
 }
 
 .container-fluid{
