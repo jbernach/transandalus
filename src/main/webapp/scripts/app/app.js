@@ -35,6 +35,8 @@ angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
                 $translate.use(language);
             });
 
+            $window.scrollTo(0, 0);
+
         });
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
