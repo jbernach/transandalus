@@ -38,6 +38,10 @@
 }
 
 .the-project{
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+
     img{
         width: 100%;
     }
@@ -71,7 +75,7 @@
                 position: absolute;
                 left: -10px;
                 top: 10px;
-                height: 113%;
+                height: 118%;
             }
         }
 
