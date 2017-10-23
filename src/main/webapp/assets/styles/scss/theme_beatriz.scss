@@ -124,6 +124,15 @@ p{
     padding-bottom: 50px;
 }
 
+.description > p, .description > ul{
+    max-width: 780px;
+    margin: auto;
+}
+
+.description p + p, .description li:first-child{
+    margin-top: 10px;
+}
+
 @import 'main-navbar';
 @import 'home';
 @import 'route-outline';
