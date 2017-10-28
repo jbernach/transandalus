@@ -11,7 +11,7 @@
             "LOW": "Low",
             "MEDIUM": "Medium",
             "HIGH": "High",
-            "VERYHIGH": "Very high"
+            "VERY_HIGH": "Very high"
         }
     }
 }
