@@ -49,12 +49,7 @@ h3{
 
 p{
     text-align: justify;
-    font-size: 1.2em;
     color: $text-color;
-
-    @media screen and (max-width: 767px){
-        font-size: 1em;
-    }
 }
 
 .container-fluid{
@@ -127,6 +122,15 @@ p{
 
 .last{
     padding-bottom: 50px;
+}
+
+.description > p, .description > ul{
+    max-width: 780px;
+    margin: auto;
+}
+
+.description p + p, .description li:first-child{
+    margin-top: 10px;
 }
 
 @import 'main-navbar';

@@ -2,10 +2,16 @@
 
 angular.module('transandalus')
     .controller('VitaController', function ($scope, Principal, API_URL) {
-       Principal.identity().then(function(account) {
-            $scope.account = account;
-            $scope.isAuthenticated = Principal.isAuthenticated;
-        });
+
+       $scope.searchMarker = {};
+       $scope.currentPositionMarker = {};
+       $scope.showMarkers = false;
+       $scope.showServices = false;
+       $scope.showAlternatives = false;
+       $scope.showLinks = false;
+       $scope.auxPos = 'top-right';
+       $scope.searchMarkerId = 100;
+       $scope.currentPositionMarkerId = 200;
 
        $scope.map = {
             center: { //Cordoba
@@ -47,8 +53,11 @@ angular.module('transandalus')
                 };
 
                 // refresh the marker
-                $scope.marker = {
-                    options:{ draggable:false },
+                $scope.searchMarker = {
+                    options:{
+                        draggable: false,
+                        animation: google.maps.Animation.DROP
+                    },
                     coords:{
                         latitude:place.geometry.location.lat(),
                         longitude:place.geometry.location.lng()
@@ -63,13 +72,6 @@ angular.module('transandalus')
                 }
             }
         };
-
-        $scope.markerId= 100;
-        $scope.auxPos = 'top-right';
-        $scope.showMarkers = false;
-        $scope.showServices = false;
-        $scope.showAlternatives = false;
-        $scope.showLinks = false;
 
         $scope.updateLayers = function(){
             $scope.kmlLayers = {
@@ -86,9 +88,38 @@ angular.module('transandalus')
                     preserveViewport: true
                 }
             };
-        }
+        };
 
-        $scope.updateLayers();
+        $scope.centerOnCurrentLocation = function(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(pos) {
+                    $scope.map.center = {
+                        latitude: pos.coords.latitude,
+                        longitude: pos.coords.longitude
+                    };
+
+                    $scope.currentPositionMarker = {
+                        markerId: 200,
+                        options:{
+                            icon: '/uploaded-images/bluecircle.png',
+                            draggable: false,
+                            animation: google.maps.Animation.DROP
+                        },
+                        coords:{
+                            latitude: pos.coords.latitude,
+                            longitude: pos.coords.longitude
+                        }
+                    };
+
+                    $scope.$apply();
+                }, function(error){},
+                {
+                    enableHighAccuracy: true
+                    ,timeout : 5000
+                });
+            }
+
+        }
 
         // Listen to changes in vita-map-control.controller on these variables
         $scope.$on('showMarkers:changed', function(event, val) {
@@ -111,9 +142,20 @@ angular.module('transandalus')
            $scope.updateLayers();
         });
 
+        $scope.$on('goToCurrentLocation', function(event, val){
+            $scope.centerOnCurrentLocation();
+        });
+
         // Dinamically set map vertical size
         $scope.$on('$viewContentLoaded', function () {
             var mapHeight = window.innerHeight - 110;
             $('#vita-google-map .angular-google-map-container').height(mapHeight);
         });
+
+        Principal.identity().then(function(account) {
+            $scope.account = account;
+            $scope.isAuthenticated = Principal.isAuthenticated;
+        });
+
+        $scope.updateLayers();
     });

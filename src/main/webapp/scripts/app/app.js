@@ -35,6 +35,8 @@ angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
                 $translate.use(language);
             });
 
+            $window.scrollTo(0, 0);
+
         });
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
@@ -54,6 +56,11 @@ angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
                 titleKey = toState.data.pageTitle;
             }
             updateTitle(titleKey);
+
+            gtag('config', 'UA-108509792-1', {
+                'page_path': $location.path(),
+                'page_title':  titleKey
+            });
         });
 
         // if the current translation changes, update the window title
@@ -155,14 +162,4 @@ angular.module('transandalus', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
 
         angular.reloadWithDebugInfo();
         */
-    }])
-
-    // Angular-google-maps
-    /*.config(function(uiGmapGoogleMapApiProvider) {
-        uiGmapGoogleMapApiProvider.configure({
-            key: 'AIzaSyA0GaaEWidwLtS1CZ2irjrxE9lTBEqHsBE',
-            v: '3.2', //defaults to latest 3.X anyhow
-            libraries: 'weather,geometry,visualization,places',
-            language:'es-ES'
-        });
-    });*/
+    }]);

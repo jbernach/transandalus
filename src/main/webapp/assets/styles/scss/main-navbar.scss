@@ -17,6 +17,9 @@
 
         @media screen and (max-width: 767px){
             position: fixed !important;
+            height: 0px !important;
+            min-height: 0px !important;
+            margin: 0px;
         }
 
         top: 0;

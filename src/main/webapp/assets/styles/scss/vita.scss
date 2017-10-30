@@ -34,14 +34,6 @@
         padding-top: 12px;
         padding-bottom: 2px;
 
-        @media screen and (min-width: 768px){
-            font-size: 1.2em;
-        }
-
-        @media screen and (max-width: 767px){
-            font-size: 1em;
-        }
-
     }
 }
 
@@ -57,3 +49,16 @@
     cursor: pointer;
 }
 
+.current-position-control{
+    font-size: 18px;
+    background-color: ghostwhite;
+    margin: 10px;
+    padding: 6px;
+    color: dimgray;
+}
+
+.height_zero_xs{
+    @media screen and (max-width: 767px){
+        height: 0px !important;
+    }
+}
