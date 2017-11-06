@@ -6,6 +6,6 @@ angular.module('transandalus')
 
 .constant('VERSION', '0.0.1')
 
-.constant('API_URL', 'https://nueva.transandalus.org/admin/api')
+.constant('API_URL', 'https://www.transandalus.org/admin/api')
 
 ;
