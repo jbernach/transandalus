@@ -1,6 +1,6 @@
 # TransAndalus
 
-[https://www.transandalus.org](TransAndalus) new web site.
+[TransAndalus](https://www.transandalus.org) new web site.
 
 # Technology used
 
