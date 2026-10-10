@@ -19,7 +19,7 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
     grunt.initConfig({
-        sass: {
+        'dart-sass': {
             options: {
                 sourceMap: true,
                 outputStyle: 'compressed'
@@ -46,7 +46,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: ['src/main/webapp/assets/styles/scss/*.scss'],
-                tasks: ['sass']
+                tasks: ['dart-sass']
             }
         },
         autoprefixer: {
@@ -316,7 +316,7 @@ module.exports = function (grunt) {
         'clean:server',
         'wiredep',
         'ngconstant:dev',
-        'sass',
+        'dart-sass',
         'browserSync',
         'watch'
     ]);
