@@ -40,7 +40,7 @@
         <div class="container-fluid" ui-view="content"></div>
         <div ui-view="foot-navbar" id="foot-navbar" ng-cloak=""></div>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-1MQiKFafN7yohFcbUm3tZCBNaV77ixQ&libraries=weather,geometry,visualization,places">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-1MQiKFafN7yohFcbUm3tZCBNaV77ixQ&v=quarterly&loading=async&libraries=geometry,visualization,places">
         </script>
         <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
         <!-- build:js scripts/vendor.js -->
@@ -72,11 +72,9 @@
         <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
         <script src="bower_components/lodash/lodash.js"></script>
         <script src="bower_components/markerclustererplus/src/markerclusterer.js"></script>
-        <script src="bower_components/google-maps-utility-library-v3-markerwithlabel/dist/markerwithlabel.js"></script>
-        <script src="bower_components/google-maps-utility-library-v3-infobox/dist/infobox.js"></script>
-        <script src="bower_components/google-maps-utility-library-v3-keydragzoom/dist/keydragzoom.js"></script>
         <script src="bower_components/js-rich-marker/src/richmarker.js"></script>
         <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+        <script src="bower_components/geoxml3/geoxml3.js"></script>
         <script src="bower_components/angular-recaptcha/release/angular-recaptcha.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
@@ -112,6 +110,7 @@
     <script src="scripts/components/navbar/navbar.directive.js"></script>
     <script src="scripts/components/navbar/navbar.controller.js"></script>
     <script src="scripts/components/navbar/foot-navbar.controller.js"></script>
+    <script src="scripts/components/route/kml-layer.directive.js"></script>
     <script src="scripts/components/route/route.directive.js"></script>
     <script src="scripts/components/travelers/travelers.directive.js"></script>
     <script src="scripts/components/stages/stages.component.js"></script>

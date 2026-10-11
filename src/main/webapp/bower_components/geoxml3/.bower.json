@@ -1,0 +1,12 @@
+{
+  "name": "geoxml3",
+  "homepage": "https://github.com/geocodezip/geoxml3",
+  "_release": "b467346bd0",
+  "_resolution": {
+    "type": "commit",
+    "commit": "b467346bd01b7012b9da15de7e200a8e2efb06aa"
+  },
+  "_source": "https://github.com/geocodezip/geoxml3.git",
+  "_target": "b467346bd01b7012b9da15de7e200a8e2efb06aa",
+  "_originalSource": "https://github.com/geocodezip/geoxml3.git"
+}

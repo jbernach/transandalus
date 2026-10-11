@@ -6,6 +6,10 @@
 
 This application uses AngularJS.
 
+KML map layers are parsed client-side with GeoXML3, so their URLs must be accessible from the site origin or allow cross-origin requests.
+
+The Google Maps JavaScript API uses the quarterly release channel for the latest stable updates.
+
 # Build
 
 Before you can build this project, you must install and configure the following dependencies on your machine:

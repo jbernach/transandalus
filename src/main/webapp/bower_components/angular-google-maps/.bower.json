@@ -49,6 +49,6 @@
     "commit": "5ca40e35c514482ddff6d790758bbbd800264163"
   },
   "_source": "https://github.com/angular-ui/angular-google-maps.git",
-  "_target": "2.4.x",
+  "_target": "2.4.1",
   "_originalSource": "angular-google-maps"
 }

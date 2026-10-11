@@ -28,7 +28,8 @@ angular.module('transandalus')
                 fullscreenControlOptions:{
                     position: google.maps.ControlPosition.BOTTOM_RIGHT
                 }
-            }
+            },
+            control: {}
         };
 
         $scope.searchbox = {
@@ -44,13 +45,11 @@ angular.module('transandalus')
                 }
 
                 // refresh the map
-                $scope.map = {
-                    center: {
-                        latitude: place.geometry.location.lat(),
-                        longitude: place.geometry.location.lng()
-                    },
-                    zoom: 10
+                $scope.map.center = {
+                    latitude: place.geometry.location.lat(),
+                    longitude: place.geometry.location.lng()
                 };
+                $scope.map.zoom = 10;
 
                 // refresh the marker
                 $scope.searchMarker = {
@@ -76,16 +75,13 @@ angular.module('transandalus')
         $scope.updateLayers = function(){
             $scope.kmlLayers = {
                 track: {
-                    url: API_URL + '/layer/track?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks + '&cacheBuster=' + (new Date()).getTime(),
-                    preserveViewport: true
+                    url: API_URL + '/layer/track?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks + '&cacheBuster=' + (new Date()).getTime()
                 },
                 markers: {
-                    url: API_URL + '/layer/marcadores?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks + '&cacheBuster=' + (new Date()).getTime(),
-                    preserveViewport: true
+                    url: API_URL + '/layer/marcadores?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks + '&cacheBuster=' + (new Date()).getTime()
                 },
                 services: {
-                    url: API_URL + '/layer/servicios?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks + '&cacheBuster=' + (new Date()).getTime(),
-                    preserveViewport: true
+                    url: API_URL + '/layer/servicios?alt=' + $scope.showAlternatives + '&link=' + $scope.showLinks + '&cacheBuster=' + (new Date()).getTime()
                 }
             };
         };
