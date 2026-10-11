@@ -11,7 +11,8 @@ angular.module('transandalus')
               longitude: -4.778564
             },
             zoom:7,
-            options: {scrollwheel: false}
+            options: {scrollwheel: false},
+            control: {}
         };
 
         if($scope.stage.$promise){

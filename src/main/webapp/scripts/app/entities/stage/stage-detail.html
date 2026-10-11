@@ -58,8 +58,8 @@
 
         <section class="map">
             <div ng-if="stage.track.contentType">
-                <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options">
-                    <ui-gmap-layer type="KmlLayer" options="map.kmlLayerOptions"></ui-gmap-layer>
+                <ui-gmap-google-map control="map.control" center="map.center" zoom="map.zoom" draggable="true" options="map.options">
+                    <ta-kml-layer map-control="map.control" url="map.kmlLayerOptions.url"></ta-kml-layer>
                 </ui-gmap-google-map>
             </div>
         </section>
