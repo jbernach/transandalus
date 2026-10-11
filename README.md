@@ -35,6 +35,15 @@ Bower is used to manage CSS and JavaScript dependencies used in this application
 specifying a newer version in `bower.json`. You can also run `bower update` and `bower install` to manage dependencies.
 Add the `-h` flag on any command to see how you can use it. For example, `bower update -h`.
 
+## GeoXML3 patch
+
+The GeoXML3 copy in `src/main/webapp/vendor-patches/geoxml3/geoxml3.js` contains local fixes for the Vita map:
+it defaults invalid zero-sized KML icon scales to `1` and corrects the My Maps pin hotspot so the pin tip aligns
+with its coordinates. Bower can overwrite the installed copy under `src/main/webapp/bower_components/geoxml3`.
+After running `bower install` or `bower update`, restore the patched version with:
+
+    cp src/main/webapp/vendor-patches/geoxml3/geoxml3.js src/main/webapp/bower_components/geoxml3/geoxml3.js
+
 # Building for production
 
 To optimize the TransAndalus site for production, run:
