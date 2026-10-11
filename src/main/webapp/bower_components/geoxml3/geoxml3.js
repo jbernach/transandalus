@@ -278,6 +278,14 @@ function processStyleUrl(node) {
       if (!!styleNodes && styleNodes.length > 0) {
         icon.href = nodeValue(getElementsByTagName(styleNodes[0], 'href')[0]);
         icon.url  = cleanURL(baseDir, icon.href);
+        if (icon.href.indexOf('SHARED-mymaps-pin-container_4x.png') !== -1) {
+          icon.hotSpot = {
+            x: 0.5,
+            y: 0,
+            xunits: 'fraction',
+            yunits: 'fraction'
+          };
+        }
         // Detect images buried in KMZ files (and use a base64 encoded URL)
         if (kmzMetaData[icon.url]) icon.url = kmzMetaData[icon.url].dataUrl;
 
