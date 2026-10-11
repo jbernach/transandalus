@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('transandalus')
-    .directive('taKmlLayer', function ($log, $window) {
+    .directive('taKmlLayer', function ($window) {
         return {
             restrict: 'E',
             scope: {
@@ -17,12 +17,14 @@ angular.module('transandalus')
                 var parserHidden = false;
 
                 function hideDocuments(activeParser, docs) {
+                    console.debug('Hiding KML documents', docs);
                     angular.forEach(docs, function (doc) {
                         activeParser.hideDocument(doc);
                     });
                 }
 
                 function clearParser() {
+                    console.debug('Clearing KML parser');
                     if (parser && !parserHidden) {
                         hideDocuments(parser, documents);
                     }
@@ -39,6 +41,7 @@ angular.module('transandalus')
                 }
 
                 function updateVisibility() {
+                    console.debug('Updating KML layer visibility');
                     if (!parser) {
                         return;
                     }
@@ -71,7 +74,7 @@ angular.module('transandalus')
 
                     var geoXML3 = $window.geoXML3;
                     if (!geoXML3 || !angular.isFunction(geoXML3.parser)) {
-                        $log.error('GeoXML3 is not available to render KML:', url);
+                        console.error('GeoXML3 is not available to render KML:', url);
                         return;
                     }
 
@@ -91,7 +94,7 @@ angular.module('transandalus')
                         },
                         failedParse: function (doc) {
                             if (parser === activeParser) {
-                                $log.error('Unable to load KML:', doc.url);
+                                console.error('Unable to load KML:', doc.url);
                             }
                         }
                     });
