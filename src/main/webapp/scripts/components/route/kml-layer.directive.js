@@ -17,14 +17,12 @@ angular.module('transandalus')
                 var parserHidden = false;
 
                 function hideDocuments(activeParser, docs) {
-                    console.debug('Hiding KML documents', docs);
                     angular.forEach(docs, function (doc) {
                         activeParser.hideDocument(doc);
                     });
                 }
 
                 function clearParser() {
-                    console.debug('Clearing KML parser');
                     if (parser && !parserHidden) {
                         hideDocuments(parser, documents);
                     }
@@ -41,7 +39,6 @@ angular.module('transandalus')
                 }
 
                 function updateVisibility() {
-                    console.debug('Updating KML layer visibility');
                     if (!parser) {
                         return;
                     }
