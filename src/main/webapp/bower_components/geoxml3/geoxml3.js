@@ -257,7 +257,9 @@ function processStyleUrl(node) {
     if (!!styleNodes && styleNodes.length > 0) {
       var icon = style.icon;
 
-      icon.scale = parseFloat(nodeValue(getElementsByTagName(styleNodes[0], 'scale')[0], icon.scale));
+      var iconScale = parseFloat(nodeValue(getElementsByTagName(styleNodes[0], 'scale')[0], icon.scale));
+      // Layer KML can emit a zero scale, which creates invalid zero-sized marker images.
+      icon.scale = iconScale > 0 ? iconScale : 1.0;
       // style.icon.heading   = (unsupported; not supported in API)
       // style.icon.color     = (unsupported; not supported in API)
       // style.icon.colorMode = (unsupported; not supported in API)
