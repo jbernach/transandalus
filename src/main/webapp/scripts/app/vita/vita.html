@@ -7,8 +7,8 @@
         <ui-gmap-google-map id="vita-google-map" control="map.control" center="map.center" zoom="map.zoom" draggable="true" options="map.options">
             <ui-gmap-search-box template="searchbox.template" events="searchbox.events" options="searchbox.options" position="auxPos"></ui-gmap-search-box>
             <ta-kml-layer map-control="map.control" url="kmlLayers.track.url"></ta-kml-layer>
-            <ta-kml-layer map-control="map.control" url="kmlLayers.markers.url" visible="showMarkers"></ta-kml-layer>
-            <ta-kml-layer map-control="map.control" url="kmlLayers.services.url" visible="showServices"></ta-kml-layer>
+            <ta-kml-layer map-control="map.control" url="kmlLayers.markers.url" layer-visible="showMarkers"></ta-kml-layer>
+            <ta-kml-layer map-control="map.control" url="kmlLayers.services.url" layer-visible="showServices"></ta-kml-layer>
             <ui-gmap-map-control template="scripts/app/vita/vita-map-control.html" controller="VitaMapControlController" position="top-left"></ui-gmap-map-control>
             <ui-gmap-map-control template="scripts/app/vita/vita-current-location-control.html" controller="VitaCurrentLocationControlController" position="right-bottom"></ui-gmap-map-control>
             <ui-gmap-marker coords="searchMarker.coords" options="searchMarker.options" events="searchMarker.events" idkey="searchMarkerId"></ui-gmap-marker>

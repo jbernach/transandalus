@@ -7,7 +7,7 @@ angular.module('transandalus')
             scope: {
                 mapControl: '<',
                 url: '<',
-                visible: '<?'
+                layerVisible: '<?'
             },
             link: function (scope) {
                 var parser;
@@ -42,10 +42,10 @@ angular.module('transandalus')
                     if (!parser) {
                         return;
                     }
-                    if (scope.visible === false && !parserHidden) {
+                    if (scope.layerVisible === false && !parserHidden) {
                         hideDocuments(parser, documents);
                         parserHidden = true;
-                    } else if (scope.visible !== false && parserHidden) {
+                    } else if (scope.layerVisible !== false && parserHidden) {
                         angular.forEach(documents, function (doc) {
                             parser.showDocument(doc);
                         });
@@ -69,7 +69,7 @@ angular.module('transandalus')
 
                     clearParser();
 
-                    if (scope.visible === false) {
+                    if (scope.layerVisible === false) {
                         return;
                     }
 
@@ -104,7 +104,7 @@ angular.module('transandalus')
                 }
 
                 scope.$watch(getMap, updateLayer);
-                scope.$watchGroup(['url', 'visible'], updateLayer);
+                scope.$watchGroup(['url', 'layerVisible'], updateLayer);
                 scope.$on('$destroy', clearParser);
             }
         };
