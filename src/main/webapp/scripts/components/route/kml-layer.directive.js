@@ -69,6 +69,10 @@ angular.module('transandalus')
 
                     clearParser();
 
+                    if (scope.visible === false) {
+                        return;
+                    }
+
                     var geoXML3 = $window.geoXML3;
                     if (!geoXML3 || !angular.isFunction(geoXML3.parser)) {
                         console.error('GeoXML3 is not available to render KML:', url);
